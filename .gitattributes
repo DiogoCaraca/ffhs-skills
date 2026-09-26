@@ -1,0 +1,6 @@
+# Einheitliche Zeilenenden im Repo, damit Windows/macOS/Linux keine Diff-Konflikte erzeugen.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.pdf binary

@@ -1,0 +1,23 @@
+# Lehrmittel, Skripte, Folien und Moodle-Material gehören NICHT ins Repo.
+# Das ist urheberrechtlich geschütztes Material der Hochschule bzw. der Verlage.
+*.pdf
+*.epub
+*.docx
+*.pptx
+*.xlsx
+
+# Niemandes echter Vault gehört hier rein - die Skills bauen ihn beim Nutzer.
+.obsidian/
+Vault/
+vault/
+
+# Betriebssystem-Krempel
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

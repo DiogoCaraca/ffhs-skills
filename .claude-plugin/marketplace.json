@@ -1,0 +1,15 @@
+{
+  "name": "ffhs-skills",
+  "description": "Claude-Code-Skills für das Studium an der FFHS",
+  "owner": {
+    "name": "Diogo Caraça",
+    "url": "https://github.com/DiogoCaraca"
+  },
+  "plugins": [
+    {
+      "name": "ffhs-studium",
+      "source": "./plugins/ffhs-studium",
+      "description": "Obsidian-Vault aus einem Modulplan bauen und PVA-Vorbereitungsaufträge darin aufarbeiten"
+    }
+  ]
+}

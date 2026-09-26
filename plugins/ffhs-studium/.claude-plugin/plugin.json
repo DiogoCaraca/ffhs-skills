@@ -1,0 +1,19 @@
+{
+  "name": "ffhs-studium",
+  "version": "1.0.0",
+  "description": "Zwei Skills für das Selbststudium: aus einem Modulplan ein Obsidian-Notizengerüst bauen, und PVA-Vorbereitungsaufträge aus den Lehrmittel-PDFs darin aufarbeiten.",
+  "author": {
+    "name": "Diogo Caraça",
+    "url": "https://github.com/DiogoCaraca"
+  },
+  "homepage": "https://github.com/DiogoCaraca/ffhs-skills",
+  "repository": "https://github.com/DiogoCaraca/ffhs-skills",
+  "license": "MIT",
+  "keywords": [
+    "obsidian",
+    "studium",
+    "ffhs",
+    "notizen",
+    "pva"
+  ]
+}
