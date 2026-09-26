@@ -56,6 +56,13 @@ Plugin installieren:
 claude plugin install ffhs-studium@ffhs-skills
 ```
 
+Falls das Klonen an SSH scheitert (kein SSH-Key hinterlegt), stattdessen die HTTPS-URL
+angeben:
+
+```bash
+claude plugin marketplace add https://github.com/DiogoCaraca/ffhs-skills.git
+```
+
 Prüfen, ob es geklappt hat:
 
 ```bash
