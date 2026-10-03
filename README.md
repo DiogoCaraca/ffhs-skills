@@ -99,11 +99,18 @@ Du kannst sie auch direkt aufrufen:
 
 ## Updates holen
 
-Wenn es eine neue Version gibt:
+Wenn es eine neue Version gibt, zuerst den Marketplace auffrischen, dann das Plugin
+aktualisieren:
 
 ```bash
 claude plugin marketplace update ffhs-skills
 ```
+
+```bash
+claude plugin update ffhs-studium@ffhs-skills
+```
+
+Danach Claude Code neu starten. Welche Version installiert ist, zeigt `claude plugin list`.
 
 ---
 
