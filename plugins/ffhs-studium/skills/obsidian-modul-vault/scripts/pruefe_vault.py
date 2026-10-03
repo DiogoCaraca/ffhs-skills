@@ -21,7 +21,7 @@ ERLAUBT = re.compile(r"^[A-Za-z0-9 \-_.]+$")
 # Wikilinks in Codebloecken und Inline-Code sind keine Links.
 FENCE = re.compile(r"```.*?```", re.DOTALL)
 INLINE = re.compile(r"`[^`\n]*`")
-WIKILINK = re.compile(r"\[\[([^\]\|#]+)")
+WIKILINK = re.compile(r"\[\[([^\]\|#\\]+)")  # ohne den Backslash aus [[Name\|Alias]] in Tabellen
 
 MOJIBAKE = {"ÔÇô": "–", "ÔÇö": "—", "Ã¤": "ä", "Ã¶": "ö", "Ã¼": "ü", "ÃŸ": "ß"}
 
@@ -39,6 +39,8 @@ def alle_pfade(vault: Path):
 
 
 def main() -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     if len(sys.argv) != 2:
         print(__doc__)
         return 2

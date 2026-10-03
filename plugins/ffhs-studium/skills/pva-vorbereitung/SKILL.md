@@ -1,35 +1,41 @@
 ---
 name: pva-vorbereitung
-description: Bearbeitet eine Vorbereitungsaufgabe für eine Präsenzveranstaltung (PVA) und füllt damit einen bestehenden Obsidian-Modul-Vault. Aus dem Moodle-Auftrag (Lernziele, Leseauftrag, Kapitelangaben) und den Lehrmittel-PDFs entstehen Konzeptnotizen mit Theorie und Beispielen, eine gefüllte Vorbereitungsnotiz, aktualisierte LE-Übersicht, Kapitellandkarte und Python-Cheatsheet. Nutze diesen Skill, wenn jemand einen Vorbereitungsauftrag, Leseauftrag, Selbsttest oder Lernziele einer PVA hochlädt oder einfügt und daraus Notizen, Zusammenfassungen oder eine Kapitelaufarbeitung will - auch dann, wenn nur "fass mir Kapitel X zusammen", "bereite die PVA vor", "ich muss das bis nächste Woche lesen" oder "trag das in Obsidian ein" gesagt wird. Ebenfalls nutzen, wenn Kapitelnummern eines Lehrmittels geprüft oder Lernziele gegen ein Lehrbuch abgeglichen werden sollen.
+description: Bearbeitet den Vorbereitungsauftrag für eine Präsenzveranstaltung (PVA) und trägt ihn in einen bestehenden Obsidian-Modul-Vault ein. Aus dem Moodle-Auftrag entstehen die Lernziele in der LE-Übersicht, die Vorbereitungsnotiz mit allen Aufträgen als Checkliste und der Lesetabelle, Präsenz- und Nachbereitungsnotiz und das Python-Cheatsheet. Die Leseaufträge darin arbeitet der Skill leseauftrag auf, den dieser Skill dafür aufruft. Nutze diesen Skill, wenn jemand einen Vorbereitungsauftrag, die Aufträge, einen Selbsttest oder die Lernziele einer PVA hochlädt oder einfügt, auch wenn nur "bereite die PVA vor" oder "trag das in Obsidian ein" gesagt wird und auch wenn der Auftrag nur aus einem Leseauftrag besteht.
 ---
 
 # PVA-Vorbereitungsaufgabe bearbeiten
 
 ## Worum es geht
 
-Vor jeder Präsenzveranstaltung gibt es einen Auftrag: Lernziele lesen, Kapitel im
-Lehrmittel durcharbeiten, Kontrollfragen lösen. Dieser Skill verwandelt diesen Auftrag in
-Notizen, die man **vor** der Präsenz liest und **in** der Präsenz benutzt.
+Vor jeder Präsenzveranstaltung gibt es einen Auftrag: Lernziele, Kapitel im Lehrmittel,
+Videos, Aufgaben, manchmal eine Abgabe. Dieser Skill verwandelt ihn in zwei Dinge:
+
+- die **Arbeitsliste** der PVA: was abzuarbeiten ist, als Checkliste im PVA-Ordner
+- den **Stoff** der Lerneinheit: Lernziele in der LE-Übersicht, die Theorie als
+  Konzeptnotizen. Die Konzeptnotizen schreibt der Skill `leseauftrag`, den dieser Skill
+  für jeden Leseauftrag aufruft.
 
 **Grundprinzip: Der Auftrag und das Lehrmittel sind die einzigen Quellen.** Die Lernziele
 werden wörtlich übernommen, die Theorie stammt aus dem Buch, jede Notiz nennt Kapitel und
-Seite. Allgemeines Fachwissen ist kein Ersatz - eine Zusammenfassung, die nicht dem
-gelesenen Kapitel folgt, hilft beim Lesen nicht.
+Seite.
 
-**Der Zielzustand ist schlank.** Die Person will beim Öffnen einer Datei sofort sehen, wo
-was steht. Lange Fliesstexte, Nebenbemerkungen, Lerntipps und Prüfungsdidaktik machen
-Notizen unbenutzbar. Die Formatregeln in `references/dateiformate.md` sind deshalb
-verbindlich, nicht als Anregung gemeint.
+**Gelernt wird mit den Konzeptnotizen und der LE-Übersicht.** Wer den Auftrag bekommt,
+kennt den Stoff noch nicht. Die Konzeptnotizen erklären ihn, die LE-Übersicht zeigt den
+roten Faden und führt in Lesereihenfolge durch die Notizen.
+
+**Die Arbeitsablagen sind schlank.** Die PVA-Dateien sind Checklisten und Tabellen: Beim
+Öffnen muss sofort klar sein, was zu tun ist. Erklärt wird dort nichts. Die Formate in
+`references/dateiformate.md` sind deshalb verbindlich.
 
 **Was dieser Skill nicht tut:** Er löst die Aufgaben nicht, erfindet keine Fachinhalte und
-rät keine Kapitelnummern. Wo das Lehrmittel ein Lernziel nicht abdeckt, wird das als
-offener Punkt vermerkt statt gefüllt.
+rät keine Kapitelnummern.
 
 ---
 
 ## Ablauf
 
-Vier Phasen. Phase 2 entscheidet über die Qualität des Rests.
+Vier Phasen. Die ersten beiden sind Buchhaltung und schnell erledigt. Phase 3 ist die
+eigentliche Arbeit und entscheidet über den Wert des Ganzen.
 
 ### Phase 1 - Auftrag und Vault erfassen
 
@@ -37,50 +43,25 @@ Aus dem Auftrag (Screenshot, Text, PDF, Moodle-Export) herausziehen:
 
 | Was | Wofür |
 |---|---|
-| **Lernziele wörtlich** | Checkliste in Vorbereitungsnotiz und LE-Übersicht |
-| Leseauftrag: Buch, Kapitel, Titel | Lesetabelle, Quellenangaben |
+| **Lernziele wörtlich** | Checkliste in der LE-Übersicht, Filter für den Leseauftrag |
+| alle Aufträge, je mit Art (lesen, Video, Aufgabe, Abgabe) | Checkliste in der Vorbereitungsnotiz |
+| Leseauftrag: Buch, Kapitel, Titel, seine eigenen Lernziele und Aufgaben | Übergabe an den Skill `leseauftrag` |
 | Welche PVA, welche Lerneinheit | Ablageort, Verlinkung |
 | Bereits erledigte Schritte | als erledigt markieren, nicht erneut auflisten |
 | Abgaben, Fristen | nur wenn genannt |
 
 Dann den Vault ansehen: Wo liegen `02_Konzepte`, `03_PVA`, die LE-Übersichten? Welche
-Konzeptnotizen existieren schon? Bestehende Notizen werden **ergänzt, nicht überschrieben**.
+Konzeptnotizen existieren schon?
 
 Fehlt der Auftrag oder das Lehrmittel, danach fragen, bevor irgendetwas geschrieben wird.
 
-### Phase 2 - Lehrmittel prüfen
+### Phase 2 - Lernziele und Aufträge eintragen
 
-Das ist der Schritt, den man nicht überspringen darf. Vorgehen in
-`references/lehrmittel-pruefen.md`, kurz:
-
-1. **Inhaltsverzeichnis aus dem PDF ziehen** und die genannten Kapitel suchen
-2. **Kapitelnummern verifizieren.** Auftrag und Buch weichen häufig ab, weil eine neuere
-   Auflage ein Kapitel eingeschoben hat. Stimmen Nummer und Titel nicht überein, den
-   Versatz benennen und die **Buchnummern** verwenden.
-3. **Kapitel vollständig lesen** - nicht überfliegen. Definitionen, Sätze, Rechenregeln und
-   die durchgerechneten Beispiele mit ihren Zahlen.
-4. **Lernziele gegen das Gelesene abgleichen.** Für jedes Lernziel: steht das Verfahren im
-   Kapitel, oder nicht?
-
-Der letzte Punkt ist der wertvollste Teil der ganzen Arbeit. Ein Lernziel, das im
-angegebenen Lehrmittel fehlt, kostet die Person sonst eine Stunde Suchen. Solche Lücken
-werden ausdrücklich als **Offen** vermerkt, mit einem Hinweis, wo stattdessen zu suchen ist.
-
-Kapitelnummern niemals raten. Findest du kein Inhaltsverzeichnis, sag das und lass die
-Angabe leer.
-
-### Phase 3 - Schreiben
-
-Reihenfolge:
-
-1. **Konzeptnotizen** in `02_Konzepte` - ein Begriff pro Datei, Aufbau
-   **Definition → Theorie → Beispiel → Quelle**
-2. **LE-Übersicht** in `01_Lerneinheiten` - Lernziele, Konzeptliste, Lehrmitteltabelle,
-   Lücken im Lehrmittel
-3. **Vorbereitungsnotiz** in `03_PVA/PVAx/01_Vorbereitung` - **nur die Aufträge** und die
-   Lesetabelle
-4. **Kapitellandkarte** in `07_Quellen` - echte Nummern nachtragen
-5. **Python-Cheatsheet** in `04_Python` - die Rechenschritte des Blocks als Code
+1. **LE-Übersicht** in `01_Lerneinheiten`: Lernziele wörtlich als Checkliste. Stichworte
+   aus dem Modulplan, die dort schon stehen, weichen dem Wortlaut des Auftrags, Abgehaktes
+   bleibt abgehakt. Überblick, Konzepte und Lehrmittel füllt Phase 3.
+2. **PVA-Ordner** `03_PVA/PVAx/` mit Vorbereitungs-, Präsenz- und Nachbereitungsnotiz
+3. **Vorbereitungsnotiz**: jeder Auftrag als Checkbox, Erledigtes abgehakt
 
 > [!important] Die PVA-Ordner sind Arbeitsablagen, keine Inhaltsablagen
 > Lernziele, Theorie, Konzeptlinks und Lehrmittel-Lücken gehören in die **LE-Übersicht**
@@ -96,26 +77,33 @@ Reihenfolge:
 > ist ein Klick ohne Inhalt. Termin und Fragen für die Präsenz stehen in den
 > Präsenznotizen, die Lerneinheit im Frontmatter (`LE:`).
 
-Verbindlich dabei:
+### Phase 3 - Leseaufträge aufarbeiten
 
-- **Die vier Abschnitte und sonst nichts.** Keine Rubriken wie „Warum gibt es das", „Grenzen",
-  „Abgrenzung zu ähnlichen Begriffen", „Prüfungsfrage in eigenen Worten", „Selbstcheck".
-- **Keine Kontroll- oder Verständnisfragen**, weder erfunden noch aus dem Buch übernommen.
-- **Beispiele mit echten Zahlen**, Schritt für Schritt gerechnet, bevorzugt die aus dem
-  Lehrmittel. Ein Beispiel ohne Zahlen ist kein Beispiel.
-- **Jede Konzeptnotiz nennt Kapitel und Seite.**
-- **Keine erfundenen Fachaussagen.** Wo Inhalt fehlt: `*(offen)*` oder ein Abschnitt
-  `## Offen` mit Checkbox.
-- **Dateinamen rein ASCII** (`Uebersicht`, `Vektorraeume`), Umlaute nur im Text.
+Für jeden Leseauftrag den Skill **`leseauftrag`** laden (als Plugin
+`ffhs-studium:leseauftrag`; ohne Skill-Tool `leseauftrag/SKILL.md` im Nachbarordner
+lesen) und vollständig durcharbeiten. Übergeben werden Buch und Kapitel, der Vault-Pfad,
+die Lernziele wörtlich und die Aufgaben, die der Auftrag an die Lektüre knüpft
+(Begriffsliste, Szenarien, Fragen). Nennt der Auftrag für den Leseauftrag eigene
+Lernziele, sind das die Filter. Sonst gelten die Lernziele der PVA, soweit das Kapitel sie
+berührt.
 
-Zeilenbudget als Orientierung: Konzeptnotiz 50-85, LE-Übersicht 35-70, Vorbereitungsnotiz
-40-50, PVA-Hub unter 25. Wird eine Datei deutlich länger, ist meist ein zweites Konzept
-darin versteckt - dann aufteilen.
+Der Skill `leseauftrag` prüft die Kapitelnummern, liest die Kapitel, gewichtet sie nach
+den Lernzielen und schreibt die Konzeptnotizen. Er trägt auch Überblick, Konzeptlinks,
+Fundstellen und Lücken in die LE-Übersicht, die Kapitellandkarte und die Lesetabelle ein.
 
-Beim Schreiben langer Markdown-Dateien den Write-Tool verwenden, keine Bash-Heredocs:
-LaTeX, Backticks und Anführungszeichen lassen Heredocs regelmässig scheitern.
+Die Konzeptnotizen nicht nebenbei aus diesem Skill heraus schreiben. Was ohne die
+Schreibregeln von `leseauftrag` entsteht, wird ein Spickzettel: korrekt, aber nur für den
+verständlich, der den Stoff schon kann. Die Person will mit den Notizen lernen.
 
-Vorlagen zum Kopieren: `assets/`.
+Danach jedes Lernziel und jeden Auftrag der PVA durchgehen: Gibt es eine Notiz, mit der
+man es lernen oder bearbeiten kann? Wenn nicht, steht der Begriff in der LE-Übersicht
+unter „Noch ohne Notiz", mit Fundstelle oder als Lücke, und der Auftrag bekommt in der
+Vorbereitungsnotiz den Hinweis, wo sein Stoff zu finden ist.
+
+Enthält der Auftrag keinen Leseauftrag, entfällt diese Phase.
+
+Hat das Modul ein Code-Cheatsheet (`04_Python` oder ähnlich), danach die Rechenschritte
+des Blocks als lauffähigen Code nachtragen.
 
 ### Phase 4 - Prüfen und übergeben
 
@@ -133,10 +121,15 @@ Steht kein `python`/`python3` im PATH, liegt oft eine Anaconda-Installation dane
 for p in ~/anaconda3/python.exe ~/miniconda3/python.exe /c/ProgramData/anaconda3/python.exe; do [ -x "$p" ] && echo "$p"; done
 ```
 
+Führt der Vault ein Log zur KI-Nutzung oder nennt der Modulplan eine Auflage dazu, eine
+Zeile ergänzen. Eine Zeile und ein Bericht genügen für den ganzen Durchgang, auch wenn der
+Skill `leseauftrag` mitgelaufen ist.
+
 Danach im Chat berichten:
 
 - was neu ist (eine Zeile, keine Dateiliste)
 - **der Kapitelabgleich**: stimmten die Nummern, gab es einen Versatz?
+- **die Gewichtung**: was im Leseauftrag Kern ist und was übersprungen werden kann
 - **die Lücken**: welche Lernziele deckt das Lehrmittel nicht ab, und wo ist stattdessen zu
   suchen? Das ist die wichtigste Information des ganzen Durchgangs.
 - was bewusst offen blieb
@@ -156,48 +149,41 @@ Kontrollfragen lösen, im Forum fragen, abgeben - wird zur Checkliste in der
 Vorbereitungsnotiz. Erledigtes als erledigt markieren. Nach der Präsenz wandern die
 Folgeaufgaben in die Nachbereitungsnotiz.
 
-**Ein Begriff pro Datei.** Faustregel: Alles, was in mehr als einer Lerneinheit vorkommt,
-wird eine eigene Datei. Sammelnotizen sind erlaubt, wenn ein Lernziel mehrere Verfahren
-bündelt (etwa „Abstandsprobleme" oder „Lagebeziehungen") - dann aber mit einer
-Übersichtstabelle zuoberst.
-
-**Theorie in Formeln und Tabellen, nicht in Fliesstext.** Eine Regel gehört in eine
-Tabellenzeile, ein Verfahren in nummerierte Schritte, ein Zusammenhang in eine Formel.
-Fliesstext nur, wo er etwas trägt, das eine Tabelle nicht kann - und dann in zwei Sätzen.
-
 **Den roten Faden des Kapitels mitnehmen.** Gute Lehrmittel bauen ein Kapitel um eine Idee
 herum. Wenn das Buch zwei Begriffe aus derselben Herleitung gewinnt oder ein
 Anwendungsproblem durch das ganze Kapitel zieht, ist genau das die Merkhilfe - ein
-`> Merksatz` in der LE-Übersicht, nicht drei Absätze Erklärung.
+`> Merksatz` in der LE-Übersicht.
+
+**Abgrenzungen in die LE-Übersicht.** Stehen mehrere verwandte Begriffe nebeneinander
+(vier Produkte, drei Filterklassen), gehört die Vergleichstabelle einmal in die
+LE-Übersicht, nicht in jede einzelne Konzeptnotiz.
 
 **Bestehendes ergänzen, nicht ersetzen.** Kommt ein Begriff in einer schon vorhandenen
 Notiz vor, wird ein Abschnitt ergänzt und die Quelle nachgetragen. Frontmatter `LE:` um die
 neue Lerneinheit erweitern.
 
-**Erledigtes als erledigt markieren.** Was die Person schon gemacht hat (Software
-installiert, Videos geschaut), steht als erledigt in der Tabelle - nicht als offene Aufgabe.
+**Keine erfundenen Fachaussagen.** Wo Inhalt fehlt: `*(offen)*` oder ein Abschnitt
+`## Offen` mit Checkbox.
 
 **Python nur im Cheatsheet.** Code gehört an eine Stelle, nicht verstreut in
 Konzeptnotizen. Im Cheatsheet echter, lauffähiger Code mit den Fallen als Kommentar.
+
+**Dateinamen rein ASCII** (`Uebersicht`, `Vektorraeume`), Umlaute nur im Text.
+
+**Der Vault gewinnt bei Äusserlichkeiten.** Hat der Vault eine eigene Schreibweise für
+Tags, Überschriften, Tabellenspalten oder Zeitangaben, folgen neue Dateien dem Vault.
+Bestehende Tabellen werden ergänzt, nicht umgebaut (siehe `references/dateiformate.md`).
+
+Beim Schreiben langer Markdown-Dateien den Write-Tool verwenden, keine Bash-Heredocs:
+LaTeX, Backticks und Anführungszeichen lassen Heredocs regelmässig scheitern.
 
 ---
 
 ## Häufige Fehler
 
-**Kapitelnummern übernehmen statt prüfen.** Der häufigste und teuerste Fehler. Auftrag und
-Buchauflage weichen regelmässig ab.
-
-**Lücken glattbügeln.** Wenn ein Lernziel im Lehrmittel fehlt, ist die Versuchung gross, es
-aus allgemeinem Wissen zu füllen. Das erzeugt eine Notiz, die beim Nachschlagen im Buch ins
-Leere führt. Lücke benennen, Suchrichtung angeben, Checkbox setzen.
-
-**Aus einer Zusammenfassung ein Lehrbuch machen.** Die Notiz begleitet das Lesen, sie
-ersetzt es nicht. Wenn eine Konzeptnotiz länger wird als der Buchabschnitt, den sie
-zusammenfasst, ist etwas falsch gelaufen.
-
-**Didaktik in die Notizen schreiben.** Hinweise wie „das ist prüfungsrelevant", „hier
-hängen die meisten", „erst selbst rechnen, dann vergleichen" sind Rauschen. Die Person
-kennt ihre Lernstrategie.
+**Die Konzeptnotizen nebenbei schreiben.** Der Leseauftrag ist der grösste Teil der Arbeit
+und hat eigene Regeln. Wer ihn zwischen Checkliste und Lesetabelle miterledigt, liefert
+verdichtete Stichworte statt Erklärungen.
 
 **Lernziele in die Vorbereitungsnotiz kopieren.** Sie stehen dann doppelt und laufen
 auseinander, sobald eines nachgetragen wird. Die Vorbereitungsnotiz verlinkt die
@@ -212,16 +198,17 @@ PVA-Ordner entsteht, wenn sein Auftrag kommt.
 **PVA-Dateien mit Kontext aufblähen.** Die Präsenznotiz ist fast leer, weil während der
 Präsenz hineingeschrieben wird. Alles Erklärende gehört in die Konzeptnotizen.
 
-**Beispiele ohne Zahlen.** „Man berechnet zuerst den Normalenvektor und setzt dann ein" ist
-kein Beispiel, sondern eine Wiederholung der Theorie.
+**Didaktik in die Notizen schreiben.** Hinweise wie „das ist prüfungsrelevant", „hier
+hängen die meisten", „erst selbst rechnen, dann vergleichen" sind Rauschen. Die Person
+kennt ihre Lernstrategie.
 
 ---
 
 ## Referenzdateien
 
-- `references/dateiformate.md` - der genaue Aufbau jedes Dateityps mit Mustern.
-  **Vor dem Schreiben der ersten Datei lesen.**
-- `references/lehrmittel-pruefen.md` - PDF-Text extrahieren, Kapitelnummern verifizieren,
-  Lernziele gegen das Lehrmittel abgleichen.
+- `references/dateiformate.md` - der genaue Aufbau von LE-Übersicht, PVA-Dateien,
+  Cheatsheet und Kapitellandkarte. **Vor dem Schreiben der ersten Datei lesen.**
+- `leseauftrag/SKILL.md` (Nachbarskill) - Leseaufträge aufarbeiten, Konzeptnotizen
+  schreiben, Kapitelnummern verifizieren.
 - `scripts/pruefe_vault.py` - Prüfskript für Phase 4.
-- `assets/` - Vorlagen für Konzeptnotiz, LE-Übersicht, PVA-Dateien.
+- `assets/` - Vorlagen für LE-Übersicht und PVA-Dateien.

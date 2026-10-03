@@ -1,7 +1,7 @@
 {
   "name": "ffhs-studium",
-  "version": "1.0.0",
-  "description": "Zwei Skills für das Selbststudium: aus einem Modulplan ein Obsidian-Notizengerüst bauen, und PVA-Vorbereitungsaufträge aus den Lehrmittel-PDFs darin aufarbeiten.",
+  "version": "1.1.0",
+  "description": "Drei Skills für das Selbststudium: aus einem Modulplan ein Obsidian-Notizengerüst bauen, PVA-Vorbereitungsaufträge darin eintragen, und Leseaufträge aus den Lehrmittel-PDFs zu verständlichen Konzeptnotizen aufarbeiten.",
   "author": {
     "name": "Diogo Caraça",
     "url": "https://github.com/DiogoCaraca"
@@ -14,6 +14,8 @@
     "studium",
     "ffhs",
     "notizen",
-    "pva"
+    "pva",
+    "leseauftrag",
+    "zusammenfassung"
   ]
 }

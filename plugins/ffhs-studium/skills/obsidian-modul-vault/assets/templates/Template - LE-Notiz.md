@@ -12,12 +12,16 @@ Vorbereitung: [[PVA<n> - Vorbereitung]]
 
 - [ ] 
 
+## Überblick
+
+Worum es in dieser Lerneinheit geht und wie die Konzepte aufeinander aufbauen, mit den Notizen in Lesereihenfolge verlinkt.
+
 ## Konzepte
 
 [[ ]]
 
 ## Lehrmittel
 
-| Thema | Buch | Kapitel | Seite |
-|---|---|---|---|
-| | | | |
+| Thema | <Buch> | Seite |
+|---|---|---|
+| | | |

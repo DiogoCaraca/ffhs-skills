@@ -12,82 +12,28 @@ Das erreicht man durch **immer gleiche Abschnitte in immer gleicher Reihenfolge*
 durch gute Überschriften. Wenn jede Konzeptnotiz denselben Aufbau hat, muss man sie nicht
 lesen, um sich zurechtzufinden.
 
+## Bestehender Vault
+
+Die Formate gelten für neue Vaults und für alles, was ein Vault offen lässt. Hat ein Vault
+schon eine eigene Schreibweise für Tags, Überschriften, Tabellenspalten oder Zeitangaben,
+folgen neue Dateien dem Vault: Einheitlichkeit im Vault zählt mehr als Übereinstimmung mit
+diesem Dokument. Bestehende Tabellen (Lesetabelle, Kapitellandkarte, Vergleichstabellen)
+werden ergänzt, nicht umgebaut. Eine Spalte oder ein Abschnitt, den dieses Dokument
+vorsieht und der noch fehlt, darf angefügt werden, etwa die Spalte `Gewicht`. Was am Format
+abweicht und stört, gehört in den Bericht, nicht in einen stillen Umbau. Ein sachlicher
+Fehler in einer bestehenden Datei (eine falsche Kapitelangabe) wird berichtigt und im
+Bericht genannt.
+
 ---
 
 ## Konzeptnotiz
 
-Der wichtigste Dateityp. **Genau vier Abschnitte.**
+Der wichtigste Dateityp, und der einzige, in dem erklärt wird. Aufbau, Schreibregeln und
+Muster stehen beim Skill, der sie schreibt: `leseauftrag/references/konzeptnotiz.md`.
 
-```markdown
----
-LE: 1
-tags: [linalg/konzept, linalg/le1]
----
-
-# Kreuzprodukt (Vektorprodukt)
-
-Zwei Vektoren des **Raums** rein, ein **Vektor** raus:
-
-$$v \times w = \begin{pmatrix} v_y w_z - v_z w_y \\ v_z w_x - v_x w_z \\ v_x w_y - v_y w_x \end{pmatrix}$$
-
-Merkstruktur: In jeder Zeile fehlt der eigene Index, die anderen kommen über Kreuz.
-
-## Theorie
-
-### Eigenschaften
-
-| | Eigenschaft | Bedeutung |
-|---|---|---|
-| a | $v \times w = -(w \times v)$ | nicht kommutativ |
-| d | orthogonal zu $v$ und $w$ | daraus der [[Normalenvektor]] |
-
-### Flächen
-
-$$A_{\text{Parallelogramm}} = \|v \times w\| \qquad A_{\text{Dreieck}} = \tfrac{1}{2}\|v \times w\|$$
-
-### Achtung
-
-- Existiert **nur im $\mathbb{R}^3$**
-- Nicht kommutativ, nicht assoziativ
-
-## Beispiel
-
-$(-1\ 0\ 1)^T \times (1\ -1\ 0)^T$:
-
-$$\begin{aligned}
-\text{1. Komponente} &= 0\cdot0 - 1\cdot(-1) = 1\\
-\text{2. Komponente} &= 1\cdot1 - (-1)\cdot0 = 1\\
-\text{3. Komponente} &= (-1)(-1) - 0\cdot1 = 1
-\end{aligned}$$
-
-Ergebnis $(1\ 1\ 1)^T$.
-
-**Probe:** $(1\ 1\ 1)\cdot(-1\ 0\ 1) = 0$ und $(1\ 1\ 1)\cdot(1\ -1\ 0) = 0$ ✓
-
-## Quelle
-
-Socher Kap. 10.1, S. 219-220
-Teschl Bd. 1, Definition 13.17
-```
-
-**Regeln**
-
-| | |
-|---|---|
-| Kopf | Ein bis zwei Sätze plus die Formel. Kein eigener Abschnitt, direkt unter der H1. |
-| `## Theorie` | Formeln, Tabellen, nummerierte Verfahren. `###`-Unterabschnitte erlaubt. |
-| `## Beispiel` | Echte Zahlen, gerechnet. Mehrere Beispiele erlaubt, mit fettem Vorspann. |
-| `## Quelle` | Kapitel und Seite, eine Zeile pro Buch. Keine Aufzählungspunkte nötig. |
-| `## Offen` | **Nur** wenn etwas ungeklärt ist. Mit Checkbox. Steht vor `## Quelle`. |
-| Umfang | 50-85 Zeilen |
-
-**Erlaubt innerhalb von `## Theorie`:** ein kurzer `### Achtung`-Block mit zwei bis drei
-Stichpunkten für echte Fallstricke (Definitionslücken, Vorzeichenfallen, Gültigkeitsbereich).
-Das ist Theorie, keine Didaktik.
-
-**Nicht erlaubt:** `## Warum gibt es das?`, `## Grenzen / Was es NICHT löst`,
-`## Abgrenzung zu ähnlichen Begriffen`, `## In numpy`, `## Prüfungsfrage in eigenen Worten`,
-`## Selbstcheck`, Callout-Blöcke mit Lerntipps.
+Kurzfassung des Aufbaus, damit die Hüllen stimmen: Kopf direkt unter der H1 (was es ist,
+wozu es dient), dann `## Theorie`, `## Beispiel`, `## Quelle`. `## Offen` nur, wenn die
+Person selbst etwas klären muss, vor `## Quelle`.
 
 Braucht ein Begriff eine Abgrenzung zu Nachbarbegriffen, gehört die als **eine Tabelle in
 die LE-Übersicht**, wo alle verwandten Begriffe nebeneinanderstehen - nicht in jede
@@ -97,8 +43,8 @@ einzelne Notiz.
 
 ## LE-Übersicht
 
-Der Inhalts-Hub einer Lerneinheit. Beantwortet: Was muss ich können, welche Notizen gehören
-dazu, wo steht es im Buch.
+Der Einstieg in eine Lerneinheit. Beantwortet: Was muss ich können, worum geht es und wie
+hängt es zusammen, welche Notizen lese ich in welcher Reihenfolge, wo steht es im Buch.
 
 ```markdown
 ---
@@ -114,12 +60,25 @@ Vorbereitung: [[PVA1 - Vorbereitung]]
 ## Lernziele
 
 - [ ] Geradengleichungen in Parameterform, in der Ebene und im Raum
+  Notizen: [[Parameterform einer Geraden]], [[Parameterform einer Ebene]]
 - [ ] Schnittpunkte zweier Geraden, Durchstosspunkt einer Geraden durch eine Ebene
+  Noch offen.
+
+## Überblick
+
+Die Lerneinheit beschreibt Geometrie mit Zahlen. Ein [[Vektor]] ist ein Pfeil mit Richtung und Länge, seine Länge misst die [[Norm eines Vektors]]. Zwei Produkte machen aus zwei Vektoren eine Aussage über ihre Lage zueinander: Das [[Skalarprodukt]] liefert eine Zahl und damit den Winkel, das [[Kreuzprodukt]] liefert einen Vektor, der auf beiden senkrecht steht.
+
+Mit diesen Werkzeugen lassen sich Geraden und Ebenen als Gleichungen schreiben ([[Parameterform einer Geraden]], [[Parameterform einer Ebene]]). Daraus folgen die Aufgaben der Lernziele: Schnittpunkte berechnen und [[Abstandsprobleme]] lösen.
+
+Vorausgesetzt: Sinus und Kosinus am rechtwinkligen Dreieck (Schulstoff, nicht im Socher).
 
 ## Konzepte
 
 **Grundlagen**
 [[Vektor]] · [[Norm eines Vektors]]
+
+**Noch ohne Notiz**
+[[Lagebeziehungen]]
 
 **Die vier Produkte**
 
@@ -143,20 +102,34 @@ $$\cos\varphi = \frac{v \cdot w}{\|v\|\,\|w\|} \qquad \sin\varphi = \frac{\det(v
 | Vektoren in der Ebene | 9.2 | 194 |
 | Winkel, Skalarprodukt, Determinante | 9.3 | 202 |
 
-Nicht im Socher: Schnittgerade zweier Ebenen, Abstand zweier Geraden im Raum.
+### Lücken im Lehrmittel
+
+- Schnittgerade zweier Ebenen: im Socher nur als Aufgabe 10.3/3, kein Verfahren im Text. Suchrichtung: Teschl Bd. 1, Kap. 9.
+- Abstand zweier Geraden im Raum: 0 Treffer im Socher.
 ```
 
-`## Merksatz` ist optional und nur dann sinnvoll, wenn das Kapitel wirklich eine tragende
-Idee hat. Höchstens ein Merksatz pro Lerneinheit - sonst ist es keiner.
+| Abschnitt | Inhalt |
+|---|---|
+| `## Lernziele` | wörtlich aus dem Auftrag, als Checkliste. Ein Lernziel, das nur ein Leseauftrag nennt, steht mit Vermerk in derselben Liste. Sobald Notizen da sind, steht unter jedem Lernziel eingerückt, welche Notizen es abdecken oder dass es noch offen ist. |
+| `## Überblick` | Der rote Faden in ein bis zwei Absätzen Klartext, für jemanden, der den Stoff noch nicht kennt: worum es geht, welches Problem die Lerneinheit löst, wie die Konzepte aufeinander aufbauen. Jede Konzeptnotiz ist an der Stelle verlinkt, an der sie im Gedankengang vorkommt. Das ergibt die Lesereihenfolge. Greift der Gedankengang auf eine spätere Notiz vor, steht sie als eigene Zeile „Lesereihenfolge" darunter. Dann die Zeile „Vorausgesetzt": was das Kapitel aus früheren Kapiteln als bekannt annimmt, in wenigen Sätzen mit Fundstelle. |
+| `## Konzepte` | die Notizen gruppiert, dazu die Tabellen, die mehrere Begriffe nebeneinanderstellen: Vergleiche (drei Verfahren nach denselben Kriterien) und Zuordnungen (welche Lage verlangt welches Verfahren). Unter „Noch ohne Notiz" die Begriffe, die ein Lernziel verlangt und die noch keine Notiz haben. |
+| `## Merksatz` | optional, nur wenn das Kapitel wirklich eine tragende Idee hat: eine Aussage des Buchs aus dem Kern-Stoff, mit Seite, ohne eigene Übertragung. Höchstens einer pro Lerneinheit, sonst ist es keiner. |
+| `## Lehrmittel` | Fundstellen mit Kapitel und Seite. Stoff, den ein Lernziel braucht und der ausserhalb der genannten Kapitel steht, als Zeile mit dem Vermerk *(ausserhalb Auftrag)*. Darunter `### Lücken im Lehrmittel`, wenn es welche gibt: je Lernziel ohne Fundstelle ein Satz mit Suchrichtung. Trefferzahlen und Suchbelege stehen in der Kapitellandkarte. |
 
-Umfang 35-70 Zeilen. Für noch nicht bearbeitete Lerneinheiten reichen Lernziele aus dem
-Modulplan, Konzeptliste und Lehrmitteltabelle: rund 35 Zeilen.
+Der Überblick erklärt nichts im Detail, das tun die Konzeptnotizen. Er sagt, wie die Teile
+zusammengehören, damit man weiss, womit man anfängt und warum das Nächste folgt. Ein
+Absatz ist eine Zeile.
+
+Umfang rund 40 bis 100 Zeilen. Für noch nicht bearbeitete Lerneinheiten reichen Lernziele
+aus dem Modulplan, Konzeptliste und Lehrmitteltabelle, der Überblick entsteht mit dem
+ersten Leseauftrag und deckt ab, was gelesen wurde.
 
 ---
 
 ## PVA-Dateien
 
-**Drei** Dateien pro Präsenzveranstaltung, in drei Phasenordnern. Zusammen unter 90 Zeilen.
+**Drei** Dateien pro Präsenzveranstaltung, in drei Phasenordnern. Sie sind so lang, wie
+Aufträge und Lesetabelle es verlangen, und enthalten sonst nichts.
 
 ```
 03_PVA/PVA1/
@@ -175,7 +148,7 @@ Theorie und Lehrmittel-Lücken stehen in der LE-Übersicht und den Konzeptnotize
 sucht man sie im Semester und vor der Prüfung. Eine PVA-Datei, die man nach der Präsenz
 noch braucht, ist falsch geschnitten.
 
-### PVAx - Vorbereitung (30-40 Zeilen)
+### PVAx - Vorbereitung
 
 ```markdown
 ---
@@ -202,10 +175,14 @@ Lernziele und Theorie: [[LE1 - Uebersicht]]
 Der Auftrag nennt Kapitel 8 und 9. **Im Buch sind es 9 und 10** - die 2. Auflage hat ein
 Kapitel zur Wahrscheinlichkeitsrechnung eingeschoben.
 
-| Kapitel | Titel | Seiten | |
-|---|---|---|---|
-| 9.2 | Vektoren | 194-201 | [ ] |
-| 9.3 | Winkel, Skalarprodukt und Determinante | 202-205 | [ ] |
+Die Konzeptnotizen fassen zusammen, was als Kern oder Überblick markiert ist.
+
+| Kapitel | Titel | Seiten | Gewicht | |
+|---|---|---|---|---|
+| 9.1 | Einführung | 193 | überspringen | [ ] |
+| 9.2 | Vektoren | 194-201 | Kern | [ ] |
+| 9.3 | Winkel, Skalarprodukt und Determinante | 202-205 | Kern | [ ] |
+| 9.3 | darin: Herleitung der Additionstheoreme | 204 | überspringen | [ ] |
 
 ## Bearbeitung
 ```
@@ -214,12 +191,16 @@ Kapitel zur Wahrscheinlichkeitsrechnung eingeschoben.
 |---|---|
 | Kopfzeile | ein Link auf die LE-Übersicht - dort stehen die Lernziele |
 | `## Aufträge` | die Handlungsschritte des Auftrags als Checkliste, Erledigtes abgehakt |
-| `## Lektüre <Buch>` | Kapiteltabelle mit Häkchenspalte, darüber der Kapitelversatz falls vorhanden |
-| `## Bearbeitung` | leer - Platz für Notizen beim Abarbeiten |
+| `## Lektüre <Buch>` | Kapiteltabelle mit Häkchenspalte, darüber der Kapitelversatz falls vorhanden und der Satz, dass die Notizen Kern und Überblick zusammenfassen. Spalte `Gewicht` aus dem Lernziel-Abgleich des Skills `leseauftrag`: **Kern** (lesen lohnt sich, die Notizen erklären es), **Überblick** (überfliegen genügt), **überspringen** (dient keinem Lernziel). Wechselt das Gewicht innerhalb eines Kapitels, bekommt der abweichende Teil eine eigene Zeile „darin: ...". Kapitel, die nicht abgeglichen wurden, bleiben in der Spalte leer. Stellen ausserhalb der genannten Kapitel, die ein Auftrag verlangt, stehen als eigene Zeilen am Ende, mit dem Vermerk *(ausserhalb Auftrag)*. |
+| `## Bearbeitung` | Platz für Notizen beim Abarbeiten. Verlangt ein Auftrag ein schriftliches Ergebnis (Begriffsliste, Szenarien), bekommt es hier eine leere `###`-Überschrift, auf die der Auftrag verlinkt. |
 
 **Nicht enthalten:** Lernziele (stehen in der LE-Übersicht), Lehrmittel-Lücken (ebenfalls
-dort), Aufwandsangaben, Hinweise auf Kurztests oder Notengewichte, organisatorische
-Fragenlisten.
+dort), Aufwandsangaben (ausser die bisherigen Vorbereitungsnotizen des Vaults führen sie),
+Hinweise auf Kurztests oder Notengewichte, organisatorische Fragenlisten.
+
+Eine Ausnahme: Verlangt ein Auftrag Stoff, der nicht in der Lektüre steht, bekommt er
+einen Hinweis, wo der Stoff zu finden ist („Stoff dazu: [[Netzwerkbedrohungen]]" oder
+„Stoff dazu: Kap. 3.3.1, siehe LE-Übersicht").
 
 ### PVAx - Praesenznotizen
 
@@ -254,8 +235,10 @@ tags: [<modulcode>/pva, <modulcode>/pva1]
 ```
 
 *Fragen für die Präsenz* steht zuoberst, weil man sie vor dem Termin sammelt und zu Beginn
-braucht. Die Leerzeilen unter den Überschriften sind Absicht: Der Cursor landet direkt an
-der richtigen Stelle.
+braucht. Der Skill `leseauftrag` trägt dort die Lücken ein, die weder Buch noch Auftrag
+schliessen (etwa „Gegenmassnahme gegen Portscans: steht nicht im Lehrmittel"). Die
+Leerzeilen unter den Überschriften sind Absicht: Der Cursor landet direkt an der richtigen
+Stelle.
 
 ### PVAx - Nachbereitung
 
@@ -296,12 +279,14 @@ Abschnitt `## Die drei Fallen` mit den teuersten Fehlern des Moduls.
 Pro Lehrmittel eine Datei in `07_Quellen`. Enthält:
 
 1. Bibliografische Zeile
-2. **Kapitelversatz** als Callout, falls Auftrag und Buch abweichen
+2. **Kapitelversatz** als Callout, nur falls Auftrag und Buch abweichen
 3. **Abdeckung**: welche Lerneinheiten das Buch behandelt und welche nicht, mit der
-   Suchmethode belegt (0 Treffer für Begriff X)
+   Suchmethode belegt (0 Treffer für Begriff X). „Nicht im Buch" und „im Buch, aber
+   ausserhalb der Leseaufträge" sind zwei verschiedene Befunde.
 4. Tabelle LE / Thema / Kapitel / Seite
 5. **Nicht im Buch**: Liste der Lernziele ohne Fundstelle
-6. Eigenheiten (Programmiersprache des Buchs, wo die Lösungen liegen)
+6. Eigenheiten (Programmiersprache des Buchs, wo die Lösungen liegen, Druckfehler und im PDF
+   verstümmelte Stellen mit Seite)
 
 Nur eintragen, was tatsächlich im Inhalts- oder Sachwortverzeichnis gefunden wurde.
 

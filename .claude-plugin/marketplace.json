@@ -9,7 +9,7 @@
     {
       "name": "ffhs-studium",
       "source": "./plugins/ffhs-studium",
-      "description": "Obsidian-Vault aus einem Modulplan bauen und PVA-Vorbereitungsaufträge darin aufarbeiten"
+      "description": "Obsidian-Vault aus einem Modulplan bauen, PVA-Vorbereitungsaufträge eintragen und Leseaufträge zu Konzeptnotizen aufarbeiten"
     }
   ]
 }

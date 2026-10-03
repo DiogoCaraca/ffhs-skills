@@ -17,18 +17,23 @@ abgeleitet - nicht aus allgemeinem Wissen über das Fachgebiet. Ein generisches
 Moduls folgt, ist es nicht.
 
 **Zweites Grundprinzip: schlank.** Ein Gerüst, in dem man suchen muss, wird nach zwei
-Wochen nicht mehr geöffnet. Jede Datei hat wenige, immer gleiche Abschnitte. Erklärtexte,
+Wochen nicht mehr geöffnet. Jede Datei hat wenige, immer gleiche Abschnitte. Gebrauchsanleitungen,
 Lerntipps, Prüfungsdidaktik und Fortschritts-Tracker gehören nicht hinein - sie erzeugen
 Pflegeaufwand ohne Nutzen. Richtwert für das fertige Gerüst: **20-30 Dateien, Median unter
-50 Zeilen pro Datei.**
+50 Zeilen pro Datei.** Erklärt wird an genau einer Stelle, in den Konzeptnotizen, und die
+entstehen erst im Lauf des Semesters.
+
+**Wer das Gerüst benutzt, kennt den Stoff noch nicht.** Die Person studiert das Fach und
+will mit den Notizen lernen. Das Gerüst ist deshalb schlank, die Konzeptnotizen, die später
+hineinkommen, sind es nicht: Sie erklären in Klartext, sie sind kein Spickzettel.
 
 **Die Notizen werden auf Deutsch verfasst**, auch wenn Teile des Modulplans englische
 Fachbegriffe enthalten. Fachbegriffe bleiben im Original (Least Privilege, Shared
 Responsibility), der Fliesstext ist deutsch.
 
 **Was dieser Skill nicht tut:** Er unterrichtet nicht und füllt keine Fachinhalte ein. Er
-baut das Gerüst - gefüllt wird es im Lauf des Semesters, Block für Block, mit dem Skill
-`pva-vorbereitung`.
+baut das Gerüst - gefüllt wird es im Lauf des Semesters, Block für Block, mit den Skills
+`pva-vorbereitung` und `leseauftrag`.
 
 ---
 
@@ -55,7 +60,7 @@ Fehlt der Modulplan, frage danach, bevor du irgendetwas baust. Ein geratenes Ger
 verursacht mehr Aufräumarbeit, als es spart.
 
 Sind Lehrmittel als PDF vorhanden: Inhaltsverzeichnisse durchsuchen und **echte
-Kapitelnummern** ermitteln. Vorgehen in `pva-vorbereitung/references/lehrmittel-pruefen.md`.
+Kapitelnummern** ermitteln. Vorgehen in `leseauftrag/references/lehrmittel-pruefen.md`.
 Kapitelnummern niemals raten - eine falsche Nummer ist in einer Open-Book-Prüfung schlimmer
 als gar keine.
 
@@ -192,15 +197,18 @@ echte Termine), und dass ausgegraute Links keine Fehler sind, sondern die Arbeit
 diese Vorrang - sie sind prüfungsnäher formuliert. So sieht die Person jederzeit, was offen
 ist.
 
-**Die LE-Übersicht ist ein Hub, kein Aufsatz.** Drei Abschnitte: *Lernziele*, *Konzepte*
-(Wikilinks, gern als Tabelle gruppiert), *Lehrmittel* (Kapitel und Seite). Optional ein
-`## Merksatz`, wenn das Kapitel wirklich eine tragende Idee hat - höchstens einer pro
-Lerneinheit. Kein "Warum diese LE hier steht", kein "Vorwissen aus vorheriger LE", kein
-Selbstcheck.
+**Die LE-Übersicht ist der Einstieg in die Lerneinheit.** Vier Abschnitte: *Lernziele*,
+*Überblick* (der rote Faden in ein bis zwei Absätzen, mit den Notizen in Lesereihenfolge
+verlinkt), *Konzepte* (Wikilinks, gern als Tabelle gruppiert), *Lehrmittel* (Kapitel und
+Seite). Optional ein `## Merksatz`, wenn das Kapitel wirklich eine tragende Idee hat -
+höchstens einer pro Lerneinheit. Der Überblick entsteht erst mit dem Leseauftrag (Skill
+`leseauftrag`), beim Gerüstbau bleibt er leer. Kein "Warum diese LE hier steht", kein
+"Vorwissen aus vorheriger LE", kein Selbstcheck.
 
-**Konzeptnotizen haben genau vier Abschnitte:** Kopf mit Definition und Formel,
-`## Theorie`, `## Beispiel`, `## Quelle`. Details und Muster in
-`pva-vorbereitung/references/dateiformate.md`. Beim Gerüstbau werden nur zwei bis drei
+**Konzeptnotizen haben genau vier Abschnitte:** Kopf (was es ist, wozu es dient),
+`## Theorie`, `## Beispiel`, `## Quelle`. Schreibregeln und Muster in
+`leseauftrag/references/konzeptnotiz.md`. Die Musternotizen des Gerüsts folgen ihnen: in
+Klartext erklärt, kein Spickzettel. Beim Gerüstbau werden nur zwei bis drei
 Musternotizen angelegt; der Rest bleibt als `[[Wikilink]]` ohne Datei - Obsidian zeigt sie
 ausgegraut, ein Klick legt sie an. Das ergibt eine automatische Arbeitsliste.
 
@@ -244,8 +252,7 @@ Lehrbuchlogik zu gliedern, führt an der Prüfung vorbei. Wenn der Modulplan IAM
 Netzwerksicherheit stellt, wird IAM zu LE2 - unabhängig davon, wie Lehrbücher es machen.
 
 **Zu viele Dateien.** Ein Gerüst mit 50 leeren Dateien wird nicht gepflegt. Ziel sind
-**20-30**: MOC, Modulplan kompakt, je LE eine Übersicht, je PVA ein Hub (Phasennotizen nur
-für die erste), zwei bis drei Musterkonzepte, Prüfung, Quellen, Vorlagen.
+**20-30**: MOC, Modulplan kompakt, je LE eine Übersicht, die drei Phasennotizen der ersten PVA, zwei bis drei Musterkonzepte, Prüfung, Quellen, Vorlagen.
 
 **Tracker und Lernpläne anlegen.** Kompetenzziele-Tracker mit Nachweisspalten,
 Wochenrhythmus-Vorschläge und Fortschrittstabellen wirken hilfreich und werden nie
@@ -270,9 +277,10 @@ Papier oder ein PDF zählt.
 
 ## Danach
 
-Das Gerüst ist leer, wo Fachinhalt fehlt. Gefüllt wird es Block für Block mit dem Skill
-**`pva-vorbereitung`**: Er nimmt den Vorbereitungsauftrag einer PVA, prüft die
-Kapitelnummern im Lehrmittel, schreibt die Konzeptnotizen und trägt die Lernziele ein.
+Das Gerüst ist leer, wo Fachinhalt fehlt. Gefüllt wird es Block für Block mit zwei Skills:
+**`pva-vorbereitung`** nimmt den Vorbereitungsauftrag einer PVA, trägt Lernziele und
+Aufträge ein und ruft für jeden Leseauftrag **`leseauftrag`** auf. Der prüft die
+Kapitelnummern im Lehrmittel, liest die Kapitel und schreibt die Konzeptnotizen.
 
 ---
 
@@ -281,5 +289,7 @@ Kapitelnummern im Lehrmittel, schreibt die Konzeptnotizen und trägt die Lernzie
 - `references/dateinamen-und-encoding.md` - Dateinamen-Regeln, Mojibake-Problem, doppelte
   Dateinamen. **Vor dem Anlegen der ersten Datei lesen.**
 - `pva-vorbereitung/references/dateiformate.md` - genauer Aufbau jedes Dateityps.
+- `leseauftrag/references/konzeptnotiz.md` - Aufbau und Schreibregeln der Konzeptnotiz.
+- `leseauftrag/references/lehrmittel-pruefen.md` - Kapitelnummern aus dem PDF gewinnen.
 - `scripts/pruefe_vault.py` - Prüfskript für Phase 4.
 - `assets/templates/` - Vorlagen zum Kopieren nach `99_Templates`.

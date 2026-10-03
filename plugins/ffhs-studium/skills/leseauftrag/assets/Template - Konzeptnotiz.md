@@ -5,13 +5,11 @@ tags: [<modulcode>/konzept, <modulcode>/le<n>]
 
 # {{title}}
 
-Ein bis zwei Sätze, was es ist, plus die Formel.
+Was es ist und welches Problem es löst, in zwei bis drei Sätzen. Bei Rechenthemen mit der Formel.
 
 ## Theorie
 
-### Achtung
-
-- 
+### 
 
 ## Beispiel
 

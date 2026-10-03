@@ -17,9 +17,11 @@ Lernziele und Theorie: [[LE<n> - Uebersicht]]
 
 <Kapitelversatz hier nennen, falls Auftrag und Buch abweichen.>
 
-| Kapitel | Titel | Seiten | |
-|---|---|---|---|
-| | | | [ ] |
+Die Konzeptnotizen fassen zusammen, was als Kern oder Überblick markiert ist.
+
+| Kapitel | Titel | Seiten | Gewicht | |
+|---|---|---|---|---|
+| | | | | [ ] |
 
 ## Bearbeitung
 
