@@ -85,7 +85,8 @@ angelegt werden soll, und gib eine Empfehlung mit Begründung aus dem Modulplan 
 in Kurztests und Prüfung - empfohlen"). Auch bei Closed Book darf die Person ja sagen.
 
 Die Antwort entscheidet über den Ordner `06_Pruefung/Spickzettel-Print`, und **der Ordner
-ist das Signal für die anderen Skills**: Gibt es ihn, füllen `pva-vorbereitung` und
+ist das Signal für die anderen Skills**: Gibt es ihn und steht in
+`_Ueber Spickzettel-Print.md` die Zeile `nachfuellen: ja`, füllen `pva-vorbereitung` und
 `leseauftrag` den Spickzettel nach jeder Lerneinheit über den Skill `spickzettel` nach.
 Gibt es ihn nicht, lassen sie ihn in Ruhe.
 
@@ -159,7 +160,8 @@ Theoriemodul ist Ballast.
 
 Wurde der Spickzettel in Phase 2 gewünscht, `06_Pruefung/Spickzettel-Print/` mit zwei
 Dateien anlegen: `_Ueber Spickzettel-Print.md` und `<Modulcode> - Spickzettel.md`, beide
-aus `spickzettel/assets/`, die Sammlung mit einer leeren Überschrift je Lerneinheit. In
+aus `spickzettel/assets/`, die Sammlung mit einer leeren Überschrift je Lerneinheit. Die
+Vorlage trägt schon `nachfuellen: ja` im Frontmatter, die Zeile bleibt stehen. In
 `_Ueber 06_Pruefung.md` verlinken. Wurde er nicht gewünscht, gibt es den Ordner nicht,
 auch nicht leer.
 
@@ -293,8 +295,8 @@ Papier oder ein PDF zählt.
 **Kapitelnummern raten.** Nur eintragen, was im Inhaltsverzeichnis gefunden wurde.
 
 **Den Spickzettel ungefragt anlegen oder weglassen.** Beides entscheidet die Person in
-Phase 2. Ein Spickzettel-Ordner, den niemand wollte, wird von den anderen Skills trotzdem
-befüllt.
+Phase 2. Ein Spickzettel-Ordner, den niemand wollte, löst später bei jeder ersten PVA eine
+Rückfrage aus. Ein fehlender, den jemand wollte, wird nie befüllt.
 
 ---
 

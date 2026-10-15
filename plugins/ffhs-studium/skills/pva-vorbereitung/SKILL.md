@@ -109,9 +109,11 @@ des Blocks als lauffähigen Code nachtragen.
 Namen (meist `06_Pruefung/Spickzettel-Print`), danach den Skill **`spickzettel`** laden
 (als Plugin `ffhs-studium:spickzettel`; ohne Skill-Tool `spickzettel/SKILL.md` im
 Nachbarordner lesen) und mit der Lerneinheit und den neuen oder ergänzten Notizen
-durcharbeiten. So liegt der Spickzettel vor dem nächsten Kurztest bereit. Fehlt der
-Ordner, entfällt das ganz: nicht anlegen, nicht nachfragen. Die Person hat sich beim
-Gerüstbau gegen einen Spickzettel entschieden. Ruft `leseauftrag` hier als Teilschritt
+durcharbeiten. So liegt der Spickzettel vor dem nächsten Kurztest bereit. Ob tatsächlich
+nachgefüllt wird, entscheidet `spickzettel` anhand der Zeile `nachfuellen:` in
+`_Ueber Spickzettel-Print.md`. Fehlt sie bei einem leeren Ordner aus einer älteren
+Gerüst-Version, fragt er einmal nach. Fehlt der Ordner, entfällt das ganz: nicht anlegen,
+nicht nachfragen. Die Person hat sich beim Gerüstbau gegen einen Spickzettel entschieden. Ruft `leseauftrag` hier als Teilschritt
 auf, füllt er den Spickzettel nicht selbst nach, das geschieht einmal an dieser Stelle.
 
 ### Phase 4 - Prüfen und übergeben

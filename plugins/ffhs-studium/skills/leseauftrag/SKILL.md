@@ -294,7 +294,8 @@ Verlinkung, Fundstellen und die Zeile im Log.
 
 **Spickzettel**: Läuft dieser Skill für sich allein und hat der Vault einen Ordner mit
 `Spickzettel` im Namen, danach den Skill `spickzettel` für die neuen oder ergänzten Notizen
-laden. Ohne diesen Ordner entfällt das, ohne Nachfrage. Läuft der Skill als Teil von
+laden. Ob nachgefüllt wird, entscheidet jener anhand der Zeile `nachfuellen:` in
+`_Ueber Spickzettel-Print.md`. Ohne den Ordner entfällt das, ohne Nachfrage. Läuft der Skill als Teil von
 `pva-vorbereitung`, übernimmt jener den Spickzettel am Schluss.
 
 Im Chat berichten:

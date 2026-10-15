@@ -1,6 +1,6 @@
 {
   "name": "ffhs-studium",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Vier Skills für das Selbststudium: aus einem Modulplan ein Obsidian-Notizengerüst bauen, PVA-Vorbereitungsaufträge darin eintragen, Leseaufträge aus den Lehrmittel-PDFs zu verständlichen Konzeptnotizen aufarbeiten und auf Wunsch einen druckfertigen Spickzettel laufend nachfüllen.",
   "author": {
     "name": "Diogo Caraça",

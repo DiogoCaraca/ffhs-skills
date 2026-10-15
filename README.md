@@ -71,6 +71,11 @@ Läuft nur, wenn dein Vault einen Spickzettel-Ordner hat. Dann füllen `pva-vorb
 bereit. Ohne den Ordner bleibt alles wie bisher. Direkt aufrufen geht auch: „füg das zum
 Spickzettel hinzu".
 
+Hast du deinen Vault mit einer älteren Version gebaut, liegt bei Open-Book-Modulen schon ein
+leerer Spickzettel-Ordner darin. Dann fragt Claude beim ersten Mal, ob du ihn nachgefüllt
+haben willst, und merkt sich die Antwort als `nachfuellen: ja` oder `nein` in
+`_Ueber Spickzettel-Print.md`. Umentscheiden kannst du jederzeit, indem du die Zeile änderst.
+
 ---
 
 ## Installation

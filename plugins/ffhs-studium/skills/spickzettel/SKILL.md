@@ -24,10 +24,15 @@ Absatz zu lesen. Ein Eintrag ist gut, wenn man mit ihm eine typische Aufgabe lö
 ohne die Konzeptnotiz zu öffnen, und ihn in Sekunden findet.
 
 **Der Spickzettel ist optional.** Nicht jedes Modul braucht einen, und nicht jede Person
-will einen. Ob es einen gibt, zeigt der Vault: ein Ordner mit `Spickzettel` im Namen,
-normalerweise `06_Pruefung/Spickzettel-Print`. Angelegt wird er beim Gerüstbau
-(`obsidian-modul-vault` fragt danach) oder auf ausdrücklichen Wunsch. Gibt es ihn, wird er
-bei jeder neuen Lerneinheit nachgeführt.
+will einen. Ob er nachgefüllt wird, steht im Vault: im Ordner mit `Spickzettel` im Namen,
+normalerweise `06_Pruefung/Spickzettel-Print`, und dort in der Zeile `nachfuellen: ja`
+oder `nachfuellen: nein` im Frontmatter von `_Ueber Spickzettel-Print.md`. Angelegt wird
+der Ordner beim Gerüstbau (`obsidian-modul-vault` fragt danach) oder auf ausdrücklichen
+Wunsch. Steht `nachfuellen: ja`, wird er bei jeder neuen Lerneinheit nachgeführt.
+
+Ältere Versionen von `obsidian-modul-vault` haben den Ordner bei Open-Book-Modulen ohne
+Nachfrage angelegt. Ein solcher Ordner ohne `nachfuellen:` ist deshalb noch kein Wunsch:
+Ist er leer, wird einmal gefragt (Schritt 1).
 
 **Was dieser Skill nicht tut:** Er liest kein Lehrmittel neu, löst keine Aufgaben und
 erfindet keine Formeln. Quelle sind die Konzeptnotizen und die LE-Übersicht, die der Skill
@@ -46,15 +51,25 @@ egal). Darin liegen meist zwei Dateien: `_Ueber <Ordner>.md` mit den Regeln und 
 eigentliche Sammlung (`<Modulcode> - Spickzettel.md`, in älteren Vaults auch
 `Formelsammlung ...` oder ähnlich). Beide lesen.
 
+Dann entscheidet die Zeile `nachfuellen:` im Frontmatter von `_Ueber ...`:
+
 | Lage | Was tun |
 |---|---|
-| Ordner und Sammlung vorhanden | weiter mit Schritt 2. Die Regeln in `_Ueber ...` gehen diesem Skill vor. |
-| Ordner vorhanden, keine Sammlung | Sammlung aus `assets/Spickzettel.md` anlegen, je Lerneinheit des Moduls eine Überschrift |
 | kein Ordner, Aufruf aus `pva-vorbereitung` oder `leseauftrag` | **nichts tun und nichts melden.** Die Person hat keinen Spickzettel gewollt. |
-| kein Ordner, die Person verlangt selbst einen Spickzettel | kurz fragen, ob der Bereich angelegt werden soll. Bei Ja: `06_Pruefung/Spickzettel-Print/` mit `_Ueber Spickzettel-Print.md` und der Sammlung aus `assets/` anlegen und in `_Ueber 06_Pruefung.md` verlinken. |
+| kein Ordner, die Person verlangt selbst einen Spickzettel | kurz fragen, ob der Bereich angelegt werden soll. Bei Ja: `06_Pruefung/Spickzettel-Print/` mit `_Ueber Spickzettel-Print.md` (`nachfuellen: ja`) und der Sammlung aus `assets/` anlegen und in `_Ueber 06_Pruefung.md` verlinken. |
+| `nachfuellen: ja` | weiter mit Schritt 2. Fehlt die Sammlung, aus `assets/Spickzettel.md` anlegen, je Lerneinheit des Moduls eine Überschrift. |
+| `nachfuellen: nein`, Aufruf aus einem anderen Skill | **nichts tun und nichts melden.** |
+| `nachfuellen: nein`, die Person verlangt selbst einen Eintrag | den Auftrag ausführen und einmal fragen, ob der Spickzettel ab jetzt automatisch nachgefüllt werden soll. Die Antwort eintragen. |
+| keine Zeile `nachfuellen:`, Sammlung mit echten Einträgen | Der Spickzettel wird benutzt: `nachfuellen: ja` eintragen und weiter mit Schritt 2. |
+| keine Zeile `nachfuellen:`, Sammlung fehlt oder enthält nur Platzhalter wie `*(füllen)*` | **einmal fragen:** „Dein Vault hat einen Spickzettel-Ordner aus dem Gerüstbau. Soll ich ihn ab jetzt nach jeder Lerneinheit nachfüllen?" Die Antwort als `nachfuellen: ja` oder `nein` eintragen, bei Ja weiter mit Schritt 2. |
 
-**Fertig, wenn** klar ist, in welche Datei geschrieben wird und welche Regeln der Vault
-dafür hat.
+Die Zeile kommt ins Frontmatter von `_Ueber ...`, die übrigen Zeilen dort bleiben. Fehlt
+`_Ueber ...` ganz, wird es aus `assets/` angelegt. Bei Nein bleibt der Ordner, wie er ist:
+nichts löschen, was die Person angelegt hat. Gefragt wird nur so, dass die Antwort im
+Vault landet. Sonst kommt dieselbe Frage bei jeder PVA wieder.
+
+**Fertig, wenn** feststeht, ob nachgefüllt wird, und wenn ja, in welche Datei und nach
+welchen Regeln des Vaults.
 
 ### 2 - Stoff bestimmen
 
@@ -176,8 +191,13 @@ Einheitsnormale oder mit Division durch die Norm. Ohne diese Zeile ist sie halb 
 **Abschreibfehler.** Ein vertauschtes Vorzeichen in einer Drehmatrix fällt beim
 Verdichten nicht auf, in der Prüfung auch nicht.
 
-**Ungefragt anlegen.** Ohne Spickzettel-Ordner im Vault hat sich die Person gegen einen
-Spickzettel entschieden. Aus einem anderen Skill heraus wird dann nichts angelegt.
+**Ungefragt anlegen oder befüllen.** Ohne Spickzettel-Ordner oder mit `nachfuellen: nein`
+hat sich die Person gegen einen Spickzettel entschieden. Aus einem anderen Skill heraus wird
+dann nichts angelegt. Ein leerer Ordner ohne `nachfuellen:` stammt oft aus einer älteren
+Version des Gerüstbaus und ist noch keine Entscheidung.
+
+**Die Antwort nicht festhalten.** Wer fragt, ohne `nachfuellen:` einzutragen, fragt bei
+der nächsten PVA wieder.
 
 ---
 
