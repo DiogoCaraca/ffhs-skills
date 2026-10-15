@@ -30,8 +30,9 @@ Dazwischen liegt das Ziel: so ausführlich, dass man es ohne Buch versteht, und 
 dass nur drinsteht, was ein Lernziel braucht.
 
 Ein Spickzettel hat seinen Platz, etwa als druckfertige Verdichtung für eine
-Open-Book-Prüfung. Er ist dann ein eigenes Dokument im Prüfungsordner und entsteht aus
-Notizen, die man verstanden hat. Die Konzeptnotiz ist die Lernunterlage.
+Open-Book-Prüfung. Er ist dann ein eigenes Dokument im Prüfungsordner, entsteht aus
+Notizen, die man verstanden hat, und wird vom Skill `spickzettel` geschrieben. Die
+Konzeptnotiz ist die Lernunterlage.
 
 **Lernziele und Lehrmittel sind die einzigen Quellen.** Die Lernziele bestimmen, was in
 die Notiz kommt und wie tief. Der Inhalt stammt aus den Lehrmitteln des Moduls, jede Notiz
@@ -291,6 +292,11 @@ Im Vault nachtragen (Formate in `pva-vorbereitung/references/dateiformate.md`):
 Wurde nur eine einzelne Notiz überarbeitet, beschränkt sich das Nachtragen auf
 Verlinkung, Fundstellen und die Zeile im Log.
 
+**Spickzettel**: Läuft dieser Skill für sich allein und hat der Vault einen Ordner mit
+`Spickzettel` im Namen, danach den Skill `spickzettel` für die neuen oder ergänzten Notizen
+laden. Ohne diesen Ordner entfällt das, ohne Nachfrage. Läuft der Skill als Teil von
+`pva-vorbereitung`, übernimmt jener den Spickzettel am Schluss.
+
 Im Chat berichten:
 
 - der **Kapitelabgleich**: stimmten die Nummern, gab es einen Versatz?
@@ -343,3 +349,5 @@ allgemeinem Wissen zu füllen. Lücke benennen, Suchrichtung angeben.
 - `assets/Template - Konzeptnotiz.md` - Vorlage.
 - `pva-vorbereitung/references/dateiformate.md` - LE-Übersicht, Kapitellandkarte,
   Vorbereitungsnotiz (Nachbarskill).
+- `spickzettel/SKILL.md` (Nachbarskill) - Spickzettel nachfüllen, nur wenn der Vault einen
+  Spickzettel-Ordner hat.

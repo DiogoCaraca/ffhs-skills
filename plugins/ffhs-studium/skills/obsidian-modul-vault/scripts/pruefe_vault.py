@@ -116,7 +116,7 @@ def main() -> int:
     print(f"   {sum(zeilen.values())} Zeilen gesamt, "
           f"Median {sorted(zeilen.values())[len(zeilen) // 2]} Zeilen pro Datei")
     # Nachschlagewerke duerfen lang sein - sie werden nicht gelesen, sondern durchsucht.
-    NACHSCHLAGEN = ("rezeptbuch", "cheatsheet", "formelsammlung", "kapitellandkarte")
+    NACHSCHLAGEN = ("rezeptbuch", "cheatsheet", "formelsammlung", "spickzettel", "kapitellandkarte")
     dick = sorted((n, p) for p, n in zeilen.items()
                   if n > 120 and not any(k in p.stem.lower() for k in NACHSCHLAGEN))
     for n, p in dick:

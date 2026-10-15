@@ -1,6 +1,6 @@
 ---
 name: pva-vorbereitung
-description: Bearbeitet den Vorbereitungsauftrag für eine Präsenzveranstaltung (PVA) und trägt ihn in einen bestehenden Obsidian-Modul-Vault ein. Aus dem Moodle-Auftrag entstehen die Lernziele in der LE-Übersicht, die Vorbereitungsnotiz mit allen Aufträgen als Checkliste und der Lesetabelle, Präsenz- und Nachbereitungsnotiz und das Python-Cheatsheet. Die Leseaufträge darin arbeitet der Skill leseauftrag auf, den dieser Skill dafür aufruft. Nutze diesen Skill, wenn jemand einen Vorbereitungsauftrag, die Aufträge, einen Selbsttest oder die Lernziele einer PVA hochlädt oder einfügt, auch wenn nur "bereite die PVA vor" oder "trag das in Obsidian ein" gesagt wird und auch wenn der Auftrag nur aus einem Leseauftrag besteht.
+description: Bearbeitet den Vorbereitungsauftrag für eine Präsenzveranstaltung (PVA) und trägt ihn in einen bestehenden Obsidian-Modul-Vault ein. Aus dem Moodle-Auftrag entstehen die Lernziele in der LE-Übersicht, die Vorbereitungsnotiz mit allen Aufträgen als Checkliste und der Lesetabelle, Präsenz- und Nachbereitungsnotiz und das Python-Cheatsheet. Die Leseaufträge darin arbeitet der Skill leseauftrag auf, den dieser Skill dafür aufruft. Hat der Vault einen Spickzettel-Ordner, füllt danach der Skill spickzettel den Spickzettel nach. Nutze diesen Skill, wenn jemand einen Vorbereitungsauftrag, die Aufträge, einen Selbsttest oder die Lernziele einer PVA hochlädt oder einfügt, auch wenn nur "bereite die PVA vor" oder "trag das in Obsidian ein" gesagt wird und auch wenn der Auftrag nur aus einem Leseauftrag besteht.
 ---
 
 # PVA-Vorbereitungsaufgabe bearbeiten
@@ -105,6 +105,15 @@ Enthält der Auftrag keinen Leseauftrag, entfällt diese Phase.
 Hat das Modul ein Code-Cheatsheet (`04_Python` oder ähnlich), danach die Rechenschritte
 des Blocks als lauffähigen Code nachtragen.
 
+**Spickzettel nur, wenn es einen gibt.** Hat der Vault einen Ordner mit `Spickzettel` im
+Namen (meist `06_Pruefung/Spickzettel-Print`), danach den Skill **`spickzettel`** laden
+(als Plugin `ffhs-studium:spickzettel`; ohne Skill-Tool `spickzettel/SKILL.md` im
+Nachbarordner lesen) und mit der Lerneinheit und den neuen oder ergänzten Notizen
+durcharbeiten. So liegt der Spickzettel vor dem nächsten Kurztest bereit. Fehlt der
+Ordner, entfällt das ganz: nicht anlegen, nicht nachfragen. Die Person hat sich beim
+Gerüstbau gegen einen Spickzettel entschieden. Ruft `leseauftrag` hier als Teilschritt
+auf, füllt er den Spickzettel nicht selbst nach, das geschieht einmal an dieser Stelle.
+
 ### Phase 4 - Prüfen und übergeben
 
 ```bash
@@ -132,6 +141,7 @@ Danach im Chat berichten:
 - **die Gewichtung**: was im Leseauftrag Kern ist und was übersprungen werden kann
 - **die Lücken**: welche Lernziele deckt das Lehrmittel nicht ab, und wo ist stattdessen zu
   suchen? Das ist die wichtigste Information des ganzen Durchgangs.
+- falls es einen Spickzettel gibt: was dort neu ist (eine Zeile)
 - was bewusst offen blieb
 
 ---
@@ -210,5 +220,7 @@ kennt ihre Lernstrategie.
   Cheatsheet und Kapitellandkarte. **Vor dem Schreiben der ersten Datei lesen.**
 - `leseauftrag/SKILL.md` (Nachbarskill) - Leseaufträge aufarbeiten, Konzeptnotizen
   schreiben, Kapitelnummern verifizieren.
+- `spickzettel/SKILL.md` (Nachbarskill) - Spickzettel nachfüllen, nur wenn der Vault einen
+  Spickzettel-Ordner hat.
 - `scripts/pruefe_vault.py` - Prüfskript für Phase 4.
 - `assets/` - Vorlagen für LE-Übersicht und PVA-Dateien.

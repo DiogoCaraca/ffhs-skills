@@ -1,15 +1,16 @@
 # FFHS-Skills für Claude Code
 
-Drei Skills, die das Selbststudium in Obsidian organisieren: Der erste baut aus einem
+Vier Skills, die das Selbststudium in Obsidian organisieren: Der erste baut aus einem
 Modulplan ein Notizengerüst, der zweite trägt vor jeder Präsenzveranstaltung die Aufträge
 und Lernziele ein, der dritte liest die Lehrmittel-Kapitel und schreibt daraus
-verständliche Zusammenfassungen.
+verständliche Zusammenfassungen. Der vierte ist optional und füllt einen druckfertigen
+Spickzettel für Kurztests und Open-Book-Prüfungen laufend nach.
 
 Gedacht für Mitstudierende, die mit Claude Code und Obsidian arbeiten.
 
 ---
 
-## Was die drei Skills machen
+## Was die vier Skills machen
 
 ### `obsidian-modul-vault`
 
@@ -21,6 +22,8 @@ daraus ein Obsidian-Gerüst für das ganze Semester:
 - kompakter Modulplan mit allen Terminen
 - Kapitellandkarte des Lehrmittels
 - Vorlagen für Konzeptnotizen, LE-Notizen, Präsenz- und Nachbereitungsnotizen
+- auf Wunsch einen Spickzettel-Bereich. Der Skill fragt danach und gibt eine Empfehlung,
+  je nachdem, ob in Prüfung und Kurztests Unterlagen erlaubt sind.
 
 Läuft auch, wenn du nur sagst „ich brauch eine sinnvolle Notizenstruktur für das Modul" —
 den Skill-Namen musst du nicht kennen.
@@ -52,6 +55,21 @@ TL;DR des Lehrmittels:
 
 Läuft auch für sich allein: „fass mir Kapitel 14.1 zusammen" oder „die Firewall-Notiz ist
 zu komprimiert, schreib sie verständlich" genügt.
+
+### `spickzettel` (optional)
+
+Verdichtet die Konzeptnotizen einer Lerneinheit zu Einträgen für deinen Spickzettel. Der
+Spickzettel erklärt nichts, denn wer ihn braucht, kennt den Stoff schon. Er liefert den
+Handgriff:
+
+- nach Aufgabentyp gegliedert („Transformationsmatrix aufstellen", nicht „Kapitel 11")
+- Formel, Verfahren in nummerierten Schritten und die Bedingung, wann es gilt
+- ein Miniaturbeispiel, die Fallen und die Seitenzahl im Lehrmittel
+
+Läuft nur, wenn dein Vault einen Spickzettel-Ordner hat. Dann füllen `pva-vorbereitung` und
+`leseauftrag` ihn nach jeder Lerneinheit automatisch nach, und er liegt vor jedem Kurztest
+bereit. Ohne den Ordner bleibt alles wie bisher. Direkt aufrufen geht auch: „füg das zum
+Spickzettel hinzu".
 
 ---
 
@@ -85,7 +103,7 @@ Prüfen, ob es geklappt hat:
 claude plugin details ffhs-studium
 ```
 
-Unter `Component inventory` muss `Skills (3)` stehen.
+Unter `Component inventory` muss `Skills (4)` stehen.
 
 Das war's. Die Skills greifen ab jetzt automatisch, sobald du in einer Session einen
 Modulplan hochlädst, einen PVA-Auftrag reinkopierst oder ein Kapitel zusammenfassen lässt.
@@ -94,6 +112,7 @@ Du kannst sie auch direkt aufrufen:
 - `/ffhs-studium:obsidian-modul-vault`
 - `/ffhs-studium:pva-vorbereitung`
 - `/ffhs-studium:leseauftrag`
+- `/ffhs-studium:spickzettel`
 
 ---
 
@@ -127,17 +146,18 @@ claude plugin uninstall ffhs-studium@ffhs-skills
 Falls du Git nicht eingerichtet hast, geht es auch von Hand:
 
 1. Oben auf **Code → Download ZIP** klicken und entpacken.
-2. Aus dem entpackten Ordner die drei Ordner
+2. Aus dem entpackten Ordner die vier Ordner
    `plugins/ffhs-studium/skills/obsidian-modul-vault`,
-   `plugins/ffhs-studium/skills/pva-vorbereitung` und
-   `plugins/ffhs-studium/skills/leseauftrag`
-   kopieren. Alle drei, sie verweisen aufeinander.
+   `plugins/ffhs-studium/skills/pva-vorbereitung`,
+   `plugins/ffhs-studium/skills/leseauftrag` und
+   `plugins/ffhs-studium/skills/spickzettel`
+   kopieren. Alle vier, sie verweisen aufeinander.
 3. Einfügen in `~/.claude/skills/` (Windows: `C:\Users\DEIN-NAME\.claude\skills\`).
    Den Ordner `skills` notfalls anlegen.
 4. Claude Code neu starten.
 
-Die Skills heissen dann ohne Präfix `obsidian-modul-vault`, `pva-vorbereitung` und
-`leseauftrag`.
+Die Skills heissen dann ohne Präfix `obsidian-modul-vault`, `pva-vorbereitung`,
+`leseauftrag` und `spickzettel`.
 
 Nachteil: Updates musst du jedes Mal selbst nachziehen. Der Weg über den Marketplace
 oben ist der bessere.

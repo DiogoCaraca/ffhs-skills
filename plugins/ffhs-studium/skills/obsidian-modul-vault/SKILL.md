@@ -33,7 +33,7 @@ Responsibility), der Fliesstext ist deutsch.
 
 **Was dieser Skill nicht tut:** Er unterrichtet nicht und füllt keine Fachinhalte ein. Er
 baut das Gerüst - gefüllt wird es im Lauf des Semesters, Block für Block, mit den Skills
-`pva-vorbereitung` und `leseauftrag`.
+`pva-vorbereitung` und `leseauftrag`, auf Wunsch auch der Spickzettel mit `spickzettel`.
 
 ---
 
@@ -72,16 +72,29 @@ Zeige im Chat:
 - pro Ordner einen Satz, **warum** er existiert (abgeleitet aus dem Modulplan)
 - die **PVA-Aufteilung**: wie viele Präsenzen, welche LE je PVA
 - die Konsequenz aus der Prüfungsform (siehe unten)
+- **die Frage nach dem Spickzettel** (siehe unten)
 - die Liste der Dateien, die du anlegen wirst
 
 Dann warte auf Freigabe.
+
+**Spickzettel: fragen, nicht annehmen.** Ein Spickzettel ist optional. Ob er sich lohnt,
+hängt an den Hilfsmitteln: Sind in einer Prüfung oder in Kurztests Unterlagen auf Papier
+oder als Offline-PDF erlaubt, ist er die wichtigste Unterlage am Prüfungstag. Bei Closed
+Book bringt er wenig. Frage deshalb in Phase 2 ausdrücklich, ob ein Spickzettel-Bereich
+angelegt werden soll, und gib eine Empfehlung mit Begründung aus dem Modulplan („Open Book
+in Kurztests und Prüfung - empfohlen"). Auch bei Closed Book darf die Person ja sagen.
+
+Die Antwort entscheidet über den Ordner `06_Pruefung/Spickzettel-Print`, und **der Ordner
+ist das Signal für die anderen Skills**: Gibt es ihn, füllen `pva-vorbereitung` und
+`leseauftrag` den Spickzettel nach jeder Lerneinheit über den Skill `spickzettel` nach.
+Gibt es ihn nicht, lassen sie ihn in Ruhe.
 
 **Konsequenzen aus der Prüfungsform:**
 
 | Prüfungsform | Was daraus folgt |
 |---|---|
-| Open Book (Papier / offline PDF) | Ordner `06_Pruefung/Spickzettel-Print` für verdichtete, druckfertige Notizen. Festhalten: Plugin-Ansichten (Dataview, Graph) existieren am Prüfungstag nicht. Suchzeit ist der Engpass, nicht Wissen. |
-| Closed Book | Fokus auf Wiederholung, kein Print-Layer |
+| Open Book (Papier / offline PDF), auch in Kurztests | Spickzettel empfehlen. Bei Ja: Ordner `06_Pruefung/Spickzettel-Print` für verdichtete, druckfertige Notizen. Festhalten: Plugin-Ansichten (Dataview, Graph) existieren am Prüfungstag nicht. Suchzeit ist der Engpass, nicht Wissen. |
+| Closed Book | Fokus auf Wiederholung. Spickzettel nur, wenn die Person ihn trotzdem will |
 | Mündlich | Ordner für Argumentationsketten statt Spickzettel |
 | Projekt-/Transferarbeit | Ordner für Artefakte, Zwischenstände, Abgabekriterien |
 | Erfahrungsnote ohne Nachprüfung | Auffälliger Warnhinweis, Termine zuoberst |
@@ -143,6 +156,12 @@ dafür ist der Skill `pva-vorbereitung` da. Ist noch gar kein Auftrag da, genüg
 
 Ordner weglassen, die der Modulplan nicht hergibt. Ein leerer `04_Labor` in einem
 Theoriemodul ist Ballast.
+
+Wurde der Spickzettel in Phase 2 gewünscht, `06_Pruefung/Spickzettel-Print/` mit zwei
+Dateien anlegen: `_Ueber Spickzettel-Print.md` und `<Modulcode> - Spickzettel.md`, beide
+aus `spickzettel/assets/`, die Sammlung mit einer leeren Überschrift je Lerneinheit. In
+`_Ueber 06_Pruefung.md` verlinken. Wurde er nicht gewünscht, gibt es den Ordner nicht,
+auch nicht leer.
 
 Beim Schreiben gelten die Inhaltsregeln unten und **zwingend**:
 
@@ -273,14 +292,20 @@ Papier oder ein PDF zählt.
 
 **Kapitelnummern raten.** Nur eintragen, was im Inhaltsverzeichnis gefunden wurde.
 
+**Den Spickzettel ungefragt anlegen oder weglassen.** Beides entscheidet die Person in
+Phase 2. Ein Spickzettel-Ordner, den niemand wollte, wird von den anderen Skills trotzdem
+befüllt.
+
 ---
 
 ## Danach
 
-Das Gerüst ist leer, wo Fachinhalt fehlt. Gefüllt wird es Block für Block mit zwei Skills:
+Das Gerüst ist leer, wo Fachinhalt fehlt. Gefüllt wird es Block für Block:
 **`pva-vorbereitung`** nimmt den Vorbereitungsauftrag einer PVA, trägt Lernziele und
 Aufträge ein und ruft für jeden Leseauftrag **`leseauftrag`** auf. Der prüft die
-Kapitelnummern im Lehrmittel, liest die Kapitel und schreibt die Konzeptnotizen.
+Kapitelnummern im Lehrmittel, liest die Kapitel und schreibt die Konzeptnotizen. Gibt es
+einen Spickzettel-Ordner, verdichtet **`spickzettel`** danach die neuen Notizen zu
+Einträgen für den Spickzettel.
 
 ---
 
@@ -293,3 +318,5 @@ Kapitelnummern im Lehrmittel, liest die Kapitel und schreibt die Konzeptnotizen.
 - `leseauftrag/references/lehrmittel-pruefen.md` - Kapitelnummern aus dem PDF gewinnen.
 - `scripts/pruefe_vault.py` - Prüfskript für Phase 4.
 - `assets/templates/` - Vorlagen zum Kopieren nach `99_Templates`.
+- `spickzettel/assets/` (Nachbarskill) - Vorlagen für den Spickzettel-Ordner, nur wenn er
+  gewünscht ist.
