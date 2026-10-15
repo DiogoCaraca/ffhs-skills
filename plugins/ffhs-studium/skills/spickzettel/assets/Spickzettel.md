@@ -4,12 +4,21 @@ tags: [<modulcode>/pruefung]
 
 # <Modulcode> - Spickzettel
 
-Nach **Aufgabentyp** gegliedert. Pro Verfahren: Voraussetzung, Formel, Schritte, Miniaturbeispiel, Falle, Seite.
+Pro Thema: kurze Theorie, Formeln, Tabellen, Anwendungsbeispiel, Code.
 
-## LE1 - <Thema>
+**Inhalt**
+
+- **LE1 <Thema>** - *(folgt)*
+- **LE2 <Thema>** - *(folgt)*
+
+---
+
+# LE1 - <Thema>
 
 *(füllen)*
 
-## LE2 - <Thema>
+---
+
+# LE2 - <Thema>
 
 *(füllen)*

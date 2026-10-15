@@ -1,6 +1,6 @@
 ---
 name: spickzettel
-description: Füllt den Spickzettel eines Obsidian-Modul-Vaults nach. Verdichtet die Konzeptnotizen einer Lerneinheit zu einer druckfertigen Anwendungshilfe für Kurztests und Open-Book-Prüfungen - Formeln, Verfahren als nummerierte Schritte, Voraussetzungen, ein Miniaturbeispiel, Fallen, Seitenzahlen. Erklärt nichts, denn wer den Spickzettel braucht, kennt den Stoff schon. Nutze diesen Skill, wenn jemand den Spickzettel, die Formelsammlung oder das Cheat Sheet ergänzen, nachfüllen oder für den nächsten Kurztest oder die Prüfung vorbereiten will, auch bei "füg das zum Spickzettel hinzu" oder "mach mir eine Formelsammlung für LE3". Die Skills pva-vorbereitung und leseauftrag rufen ihn auf, wenn der Vault einen Spickzettel-Ordner hat. Nicht für Notizen zum Lernen - dafür ist leseauftrag da.
+description: Füllt den Spickzettel eines Obsidian-Modul-Vaults nach. Verdichtet die Konzeptnotizen einer Lerneinheit zu einer druckfertigen Formelsammlung für Kurztests und Open-Book-Prüfungen - pro Thema ein Kurzeinstieg in 1-2 Sätzen, Definition und Formeln, Tabellen, Rezept in Schritten, Anwendungsbeispiel, pro Lerneinheit ein geprüftes Code-Cheatsheet und die häufigen Fehler. Erklärt nicht ausführlich, denn wer den Spickzettel braucht, kennt den Stoff schon. Nutze diesen Skill, wenn jemand den Spickzettel, die Formelsammlung oder das Cheat Sheet ergänzen, nachfüllen, überarbeiten oder für den nächsten Kurztest oder die Prüfung vorbereiten will, auch bei "füg das zum Spickzettel hinzu" oder "mach mir eine Formelsammlung für LE3". Die Skills pva-vorbereitung und leseauftrag rufen ihn auf, wenn der Vault einen Spickzettel-Ordner hat. Nicht für Notizen zum Lernen - dafür ist leseauftrag da.
 ---
 
 # Spickzettel nachfüllen
@@ -12,16 +12,21 @@ während des Semesters Lerneinheit für Lerneinheit nachgefüllt, damit er vor j
 Kurztest bereitliegt und nicht in der letzten Woche aus 30 Notizen zusammengesucht werden
 muss.
 
+**Vorbild ist eine Formelsammlung, kein Notizzettel.** Knappe Theorie, Tabellen, Formeln,
+Anwendungsbeispiele und Code, jedes Thema gleich aufgebaut. Wer eine Aufgabe vor sich
+hat, findet über die Übersicht das passende Thema, liest in zwei Sätzen, worum es geht,
+und rechnet mit Formel, Rezept und Beispiel los.
+
 **Grundprinzip: anwenden, nicht erklären.** Wer den Spickzettel braucht, kennt das Thema
 mindestens halbwegs. Gesucht ist in der Prüfung nicht das Verständnis, sondern der
 Handgriff: Welche Formel, in welcher Reihenfolge, unter welcher Bedingung, und wo lauert
-der Vorzeichenfehler? Erklärt wird an genau einer Stelle, in den Konzeptnotizen. Der
-Spickzettel ist ihr Gegenstück und hat die umgekehrten Regeln: Was in einer Konzeptnotiz
-ein Fehler wäre (Tabellen, Halbsätze, Pfeile, Stichworte), ist hier richtig.
+der Vorzeichenfehler? Theorie gibt es nur als Kurzeinstieg von ein bis zwei Sätzen.
+Herleitungen und Begründungen stehen an genau einer Stelle, in den Konzeptnotizen.
 
 **Suchzeit ist der Engpass, nicht Wissen.** In 20 Minuten Kurztest bleibt keine Zeit, einen
 Absatz zu lesen. Ein Eintrag ist gut, wenn man mit ihm eine typische Aufgabe lösen kann,
-ohne die Konzeptnotiz zu öffnen, und ihn in Sekunden findet.
+ohne die Konzeptnotiz zu öffnen, und ihn in Sekunden findet. Deshalb: Tabellen statt
+Fliesstext, Callouts als feste Orientierungspunkte, jedes Thema in derselben Reihenfolge.
 
 **Der Spickzettel ist optional.** Nicht jedes Modul braucht einen, und nicht jede Person
 will einen. Ob er nachgefüllt wird, steht im Vault: im Ordner mit `Spickzettel` im Namen,
@@ -35,8 +40,8 @@ Nachfrage angelegt. Ein solcher Ordner ohne `nachfuellen:` ist deshalb noch kein
 Ist er leer, wird einmal gefragt (Schritt 1).
 
 **Was dieser Skill nicht tut:** Er liest kein Lehrmittel neu, löst keine Aufgaben und
-erfindet keine Formeln. Quelle sind die Konzeptnotizen und die LE-Übersicht, die der Skill
-`leseauftrag` geschrieben hat.
+erfindet keine Formeln. Quelle sind die Konzeptnotizen, die LE-Übersicht und das
+Code-Cheatsheet des Moduls, die `leseauftrag` und `pva-vorbereitung` geschrieben haben.
 
 ---
 
@@ -68,6 +73,9 @@ Die Zeile kommt ins Frontmatter von `_Ueber ...`, die übrigen Zeilen dort bleib
 nichts löschen, was die Person angelegt hat. Gefragt wird nur so, dass die Antwort im
 Vault landet. Sonst kommt dieselbe Frage bei jeder PVA wieder.
 
+Die Regeln in `_Ueber ...` gelten vor denen dieses Skills: Hat die Person dort eine eigene
+Form festgelegt, wird sie befolgt.
+
 **Fertig, wenn** feststeht, ob nachgefüllt wird, und wenn ja, in welche Datei und nach
 welchen Regeln des Vaults.
 
@@ -78,79 +86,122 @@ Welche Lerneinheit, welche Notizen? Aus dem Auftrag ablesen: Nach `pva-vorbereit
 die Person selbst einen Umfang („vorerst nur die Transformationen"), gilt genau dieser.
 
 Dann die Quellen lesen: die Konzeptnotizen, die LE-Übersicht (Lernziele, Vergleichstabellen,
-Merksatz) und, falls vorhanden, Aufgaben oder Selbsttests aus der Vorbereitungsnotiz. Die
-**Verben der Lernziele** sagen, was auf den Zettel gehört:
+Merksatz), das Code-Cheatsheet des Moduls (`04_Python` oder ähnlich) und, falls vorhanden,
+Aufgaben oder Selbsttests aus der Vorbereitungsnotiz. Die **Verben der Lernziele** sagen,
+was auf den Zettel gehört:
 
 | Verb im Lernziel | Auf den Spickzettel |
 |---|---|
-| berechnen, anwenden, bestimmen, lösen | Formel, Verfahren in Schritten, Miniaturbeispiel |
-| unterscheiden, vergleichen, einordnen, auswählen | Abgrenzungstabelle oder Entscheidungsregel „wenn ..., dann ..." |
+| berechnen, anwenden, bestimmen, lösen | Formel, Rezept in Schritten, Anwendungsbeispiel, Code |
+| unterscheiden, vergleichen, einordnen, auswählen | Abgrenzungstabelle oder Entscheidungstabelle „wenn ..., dann ..." |
 | nennen, kennen, aufzählen | die Liste selbst, ein Merkmal pro Eintrag |
-| erklären, begründen | nur das Stichwort, an dem die Begründung hängt. Die Begründung steht in der Notiz. |
+| erklären, begründen | nur der Kurzeinstieg und das Stichwort, an dem die Begründung hängt |
 
-**Fertig, wenn** feststeht, welche Notizen ausgewertet werden und welche Aufgabentypen
-daraus folgen.
+**Fertig, wenn** feststeht, welche Notizen ausgewertet werden und welche Themen und
+Aufgabentypen daraus folgen.
 
 ### 3 - Verdichten
 
-Für jeden Aufgabentyp ein Block. Die Überschrift ist die Aufgabe, nicht das Thema:
-„Transformationsmatrix aufstellen" statt „Geometrische Transformationen". Ein Block
-enthält, was davon gebraucht wird, in dieser Reihenfolge:
+Jede Lerneinheit hat denselben Aufbau. `references/format.md` zeigt ihn an einem
+vollständigen Beispiel und nennt die Callout-Syntax. **Vor dem ersten Eintrag lesen.**
 
-1. **Voraussetzung** in einer Zeile: *Gilt nur, wenn ...* Fehlt sie, rechnet man mit der
-   richtigen Formel am falschen Fall.
-2. **Formel oder Tabelle.** Kataloge (Matrizen, Regeln, Kennzahlen) als Tabelle mit einer
-   Zeile pro Eintrag.
-3. **Schritte**, nummeriert, wenn es ein Verfahren ist. Ein Schritt ist eine Handlung,
-   kein Satz über die Handlung.
-4. **Miniaturbeispiel**: die kleinste Aufgabe, an der man das Verfahren nachrechnen kann.
-   Ein 2×2-Beispiel reicht, eines pro Verfahren.
-5. **Falle**: Vorzeichen, Reihenfolge, Konvention, Druckfehler im Lehrmittel. Offene Punkte
-   aus der Notiz, die das Ergebnis ändern („Drehsinn im Buch umgekehrt"), gehören hierher.
-6. **Seitenzahlen** in einer Zeile am Blockende, aus dem Abschnitt `## Quelle` der Notiz
+```
+# LE<n> - <Thema der LE>
+> [!tip] Übersicht           - welches Werkzeug / Verfahren für welche Frage
+## <Thema>                   - je Thema, so viele wie nötig
+   Kurzeinstieg               - 1-2 Sätze: was es ist, wozu
+   > [!important] Definition  - Definition, Formeln, Kernregel
+   Tabellen                   - Fälle, Varianten, Beispiele mit ✓ / ✗
+   Rezept                     - nummerierte Schritte, wenn es ein Verfahren ist
+   > [!example] Beispiel      - kursive Aufgabe, kurze Rechnung, Probe
+## <Sprache>-Cheatsheet LE<n> - ein Codeblock, nur wenn das Modul eine Sprache verwendet
+> [!warning] Häufige Fehler LE<n>
+Quellenzeile mit Seitenzahlen
+```
+
+Die Teile im Einzelnen:
+
+1. **Übersicht.** Eine Tabelle, die von der Frage zum Werkzeug führt („Winkel? →
+   Skalarprodukt"). Sie ist der Einstieg beim Suchen. In einem Textfach führt sie von der
+   Situation zum Begriff oder zur Methode.
+2. **Kurzeinstieg.** Höchstens zwei Sätze, ohne Herleitung. Er sagt, was das Ding ist und
+   wofür man es braucht. Wer mehr braucht, liest die Konzeptnotiz.
+3. **Definition / Formeln** im Callout `[!important]`. Notation und Bezeichner aus den
+   Notizen übernehmen: Steht im Spickzettel $Sp(\varphi)$ und in der Notiz $S_\varphi$, sucht
+   man in der Prüfung an der falschen Stelle.
+4. **Tabellen** für alles, was Fälle, Varianten oder Kataloge hat: eine Zeile pro Fall.
+   Ja/Nein-Fragen mit ✓ / ✗ und dem Grund in einer Spalte.
+5. **Rezept** als nummerierte Schritte, wenn es ein Verfahren ist. Ein Schritt ist eine
+   Handlung. Die Voraussetzung gehört davor: *Gilt nur, wenn ...*
+6. **Anwendungsbeispiel** im Callout `[!example]`: die Aufgabe kursiv, dann die kürzeste
+   Rechnung, die das Verfahren zeigt, und wo möglich eine Probe. Eines pro Thema reicht,
+   bei mehreren Fällen eines pro Fall.
+7. **Code-Cheatsheet**, nur wenn das Modul Python, R oder eine andere Sprache verwendet.
+   Ein Block pro Lerneinheit, gegliedert mit `# (1)`, `# (2)` ..., hinter jeder Zeile mit
+   Ergebnis die Ausgabe als `# -> ...`. Das Code-Cheatsheet des Moduls bleibt die
+   vollständige Sammlung, hier steht der Auszug zu den Aufgaben dieser LE. **Jede Ausgabe
+   wird in Schritt 5 ausgeführt und verglichen.**
+8. **Häufige Fehler** im Callout `[!warning]`: nummeriert, der Fehler fett, dahinter in
+   einem Halbsatz die Korrektur. Vorzeichen, Reihenfolge, Konvention, Druckfehler im
+   Lehrmittel, Code-Fallen.
+9. **Quellenzeile** am LE-Ende: Kapitel und Seiten aus dem Abschnitt `## Quelle` der Notizen
    oder der Kapitellandkarte. Nie raten.
 
-Was **nicht** hineingehört: Herleitungen, Begründungen, Beweise, Geschichte, Einleitungssätze,
-„warum das so ist", Didaktik („das kommt oft"). Ebenso kein Code: Der steht im
-Code-Cheatsheet des Moduls (`04_Python` oder ähnlich). Und keine Wikilinks als
-Inhaltsträger: Auf Papier führen sie nirgendwohin.
+Was **nicht** hineingehört: Herleitungen, Beweise, Geschichte, „warum das so ist" über den
+Kurzeinstieg hinaus, Didaktik („das kommt oft"). Keine Wikilinks als Inhaltsträger und keine
+Einbettungen `![[...]]`: Auf Papier führen sie nirgendwohin.
 
-In einem Textfach (ohne Formeln) gilt dasselbe in anderer Form: Entscheidungsregeln,
-Abgrenzungstabellen über dieselben Kriterien, Listen mit Erkennungsmerkmal, Fachbegriffe
-mit Ein-Zeilen-Definition.
+**Textfach (ohne Formeln):** derselbe Aufbau. An die Stelle der Formeln treten
+Definitionen in einer Zeile, an die Stelle der Rezepte Entscheidungsregeln und Prüfschemata,
+an die Stelle der Rechnung ein kurzer Fall mit Lösung. Das Code-Cheatsheet entfällt.
 
-Notation und Bezeichner aus den Notizen übernehmen. Steht im Spickzettel $Sp(\varphi)$ und in
-der Notiz $S_\varphi$, sucht man in der Prüfung an der falschen Stelle.
+**Umfang:** Richtwert rund 1200 Wörter pro Lerneinheit ohne Code, zwei bis drei
+Bildschirmseiten. Wird es mehr, wurde gesammelt statt verdichtet: Fliesstext in Tabellen
+überführen, doppelte Beispiele streichen.
 
-Richtwert: **eine A4-Seite pro Lerneinheit.** Wird es mehr, wurde gesammelt statt
-verdichtet.
-
-**Fertig, wenn** jeder Block mit dem Spickzettel allein eine typische Aufgabe lösbar
-macht und kein Satz darin nur dem Verständnis dient.
+**Fertig, wenn** jedes Thema mit dem Spickzettel allein eine typische Aufgabe lösbar macht,
+jedes Thema gleich aufgebaut ist und kein Satz darin nur dem Verständnis dient.
 
 ### 4 - Eintragen
 
 In den Abschnitt der passenden Lerneinheit schreiben. Platzhalter wie `*(füllen)*`
-ersetzen. Was schon dasteht, bleibt: ergänzen, nicht umbauen. Steht ein Eintrag schon in
-einem anderen Abschnitt, nicht verdoppeln, sondern dort ergänzen.
+ersetzen. Steht ein Eintrag schon in einem anderen Abschnitt, nicht verdoppeln, sondern
+dort ergänzen.
 
-Hat der Vault für den Spickzettel eine eigene Form (Tabellenspalten, Überschriftenebenen),
-folgt der neue Block ihr. Gibt es zusätzlich ein gedrucktes PDF ohne Quelldatei im Vault,
-wird es nicht verändert. Im Bericht erwähnen, dass es veraltet ist.
+**Bestehende Form:** Hat der Vault einen Spickzettel in einer älteren oder eigenen Form
+(etwa nur Tabellen, `## LE` statt `# LE`), folgt ein **Nachtrag** dieser Form. Umgebaut
+auf das Format oben wird nur, wenn die Person es verlangt („überarbeite den Spickzettel").
+Dann die ganze Datei umbauen, nicht nur die neue LE, damit der Zettel einheitlich bleibt.
+
+Gibt es zusätzlich ein gedrucktes PDF ohne Quelldatei im Vault, wird es nicht verändert.
+Im Bericht erwähnen, dass es veraltet ist.
 
 Lange Markdown-Dateien mit dem Write- oder Edit-Tool schreiben, nicht mit
 Bash-Heredocs: LaTeX, Backticks und Anführungszeichen lassen Heredocs regelmässig
 scheitern.
 
+**In Tabellen kein nacktes `|`**, auch nicht in Formeln: Obsidian trennt daran die Zelle.
+Betrag und Norm als `\lvert x\rvert` und `\lVert x\rVert` schreiben. In Callouts beginnt
+jede Zeile mit `> `, auch Tabellenzeilen und Leerzeilen (`>`).
+
 ### 5 - Prüfen und berichten
+
+Zwei Skripte:
 
 ```bash
 python <skill-pfad>/scripts/pruefe_spickzettel.py "<vault>/06_Pruefung/Spickzettel-Print/<Datei>.md"
+python <skill-pfad>/scripts/pruefe_code.py "<vault>/06_Pruefung/Spickzettel-Print/<Datei>.md"
 ```
 
-Das Skript meldet Erklär-Absätze, Begründungsketten, Theorie-Überschriften, lange
-Tabellenzellen, Code, Einbettungen, die auf Papier fehlen, und Lerneinheiten über dem
-Richtwert. Jeden Hinweis beheben oder im Bericht begründen.
+`pruefe_spickzettel.py` meldet lange Absätze, Begründungsketten, Theorie-Überschriften,
+lange Tabellenzellen, nackte `|` in Tabellenformeln, Einbettungen, Lerneinheiten über dem
+Richtwert und Lerneinheiten ohne Übersicht, Beispiel oder häufige Fehler. Jeden Hinweis
+beheben oder im Bericht begründen.
+
+`pruefe_code.py` führt alle Python-Blöcke der Datei der Reihe nach aus und stellt jedes
+Ergebnis neben den `# ->`-Kommentar. Jede Abweichung korrigieren - im Kommentar, nicht im
+Code, ausser der Code ist falsch. Für R oder andere Sprachen die Blöcke selbst ausführen
+und genauso vergleichen.
 
 Steht kein `python`/`python3` im PATH, liegt oft eine Anaconda-Installation daneben:
 
@@ -161,9 +212,9 @@ for p in ~/anaconda3/python.exe ~/miniconda3/python.exe /c/ProgramData/anaconda3
 Dann zweimal gegenlesen:
 
 1. **Abschreibfehler.** Jede Formel, jedes Vorzeichen und jeden Index mit der Konzeptnotiz
-   vergleichen. Ein Fehler auf dem Spickzettel kostet mehr als ein fehlender Eintrag, weil
-   man ihm in der Prüfung vertraut.
-2. **Anwendbarkeit.** Für jeden Block eine typische Aufgabe denken und sie nur mit dem
+   vergleichen, jede Zahl in den Beispielen nachrechnen. Ein Fehler auf dem Spickzettel
+   kostet mehr als ein fehlender Eintrag, weil man ihm in der Prüfung vertraut.
+2. **Anwendbarkeit.** Für jedes Thema eine typische Aufgabe denken und sie nur mit dem
    Spickzettel lösen. Fehlt ein Schritt, eine Voraussetzung oder ein Vorzeichen, ergänzen.
    Steht etwas da, das beim Lösen nicht gebraucht wurde, streichen.
 
@@ -175,26 +226,28 @@ bewusst weggelassen wurde und ob ein gedrucktes PDF nachgezogen werden muss.
 
 ## Häufige Fehler
 
-**Erklären.** Der Reflex aus den Konzeptnotizen. Ein Absatz, der sagt, warum eine Formel
-gilt, kostet in der Prüfung Lesezeit und bringt keinen Punkt. Die Erklärung steht in der
-Notiz.
+**Erklären.** Der Reflex aus den Konzeptnotizen. Ein dritter und vierter Satz im
+Kurzeinstieg, der sagt, warum eine Formel gilt, kostet in der Prüfung Lesezeit und bringt
+keinen Punkt. Die Erklärung steht in der Notiz.
 
 **Sammeln statt verdichten.** Jede Formel der Notiz übernehmen, auch die Zwischenschritte
 der Herleitung. Auf den Zettel kommt das Ergebnis, das man anwendet.
 
-**Nach Thema statt nach Aufgabe gliedern.** In der Prüfung sucht man „wie bestimme ich ...",
-nicht „was steht zu Kapitel 11".
+**Uneinheitlicher Aufbau.** Ein Thema mit Beispiel-Callout, das nächste ohne, eines mit
+Tabelle, eines als Fliesstext. Die feste Reihenfolge ist es, die das Suchen schnell macht.
 
 **Formel ohne Voraussetzung.** Die Abstandsformel für Punkt und Ebene gilt mit
 Einheitsnormale oder mit Division durch die Norm. Ohne diese Zeile ist sie halb falsch.
 
+**Ungeprüfte Code-Ausgaben.** Ein `# -> 5.0`, das in Wahrheit `-14.0` ist, fällt erst in der
+Prüfung auf. `pruefe_code.py` läuft vor jedem Bericht.
+
 **Abschreibfehler.** Ein vertauschtes Vorzeichen in einer Drehmatrix fällt beim
 Verdichten nicht auf, in der Prüfung auch nicht.
 
-**Ungefragt anlegen oder befüllen.** Ohne Spickzettel-Ordner oder mit `nachfuellen: nein`
-hat sich die Person gegen einen Spickzettel entschieden. Aus einem anderen Skill heraus wird
-dann nichts angelegt. Ein leerer Ordner ohne `nachfuellen:` stammt oft aus einer älteren
-Version des Gerüstbaus und ist noch keine Entscheidung.
+**Ungefragt anlegen, befüllen oder umbauen.** Ohne Spickzettel-Ordner oder mit
+`nachfuellen: nein` hat sich die Person gegen einen Spickzettel entschieden. Ein bestehender
+Spickzettel in eigener Form wird ergänzt, nicht ungefragt umgebaut.
 
 **Die Antwort nicht festhalten.** Wer fragt, ohne `nachfuellen:` einzutragen, fragt bei
 der nächsten PVA wieder.
@@ -203,7 +256,10 @@ der nächsten PVA wieder.
 
 ## Referenzdateien
 
-- `scripts/pruefe_spickzettel.py` - Prüfskript für Schritt 5.
+- `references/format.md` - der Aufbau an einem vollständigen Beispiel, Callout-Syntax,
+  Variante für Textfächer. Vor dem ersten Eintrag lesen.
+- `scripts/pruefe_spickzettel.py` - Prüfskript für Form und Umfang (Schritt 5).
+- `scripts/pruefe_code.py` - führt die Python-Blöcke aus und vergleicht mit `# ->` (Schritt 5).
 - `assets/_Ueber Spickzettel-Print.md` - Regeln für den Spickzettel-Ordner, Vorlage beim Anlegen.
 - `assets/Spickzettel.md` - Vorlage für die Sammlung.
 - `leseauftrag/references/konzeptnotiz.md` (Nachbarskill) - wie die Notizen aufgebaut

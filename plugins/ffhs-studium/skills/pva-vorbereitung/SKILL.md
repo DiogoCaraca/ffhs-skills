@@ -178,7 +178,8 @@ neue Lerneinheit erweitern.
 `## Offen` mit Checkbox.
 
 **Python nur im Cheatsheet.** Code gehört an eine Stelle, nicht verstreut in
-Konzeptnotizen. Im Cheatsheet echter, lauffähiger Code mit den Fallen als Kommentar.
+Konzeptnotizen. Im Cheatsheet echter, lauffähiger Code mit den Fallen als Kommentar. Der
+Spickzettel übernimmt daraus pro Lerneinheit einen geprüften Auszug.
 
 **Dateinamen rein ASCII** (`Uebersicht`, `Vektorraeume`), Umlaute nur im Text.
 

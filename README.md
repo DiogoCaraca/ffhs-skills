@@ -58,13 +58,15 @@ zu komprimiert, schreib sie verständlich" genügt.
 
 ### `spickzettel` (optional)
 
-Verdichtet die Konzeptnotizen einer Lerneinheit zu Einträgen für deinen Spickzettel. Der
-Spickzettel erklärt nichts, denn wer ihn braucht, kennt den Stoff schon. Er liefert den
-Handgriff:
+Verdichtet die Konzeptnotizen einer Lerneinheit zu einer Formelsammlung für deinen
+Spickzettel. Er erklärt nur knapp, denn wer ihn braucht, kennt den Stoff schon. Jede
+Lerneinheit ist gleich aufgebaut:
 
-- nach Aufgabentyp gegliedert („Transformationsmatrix aufstellen", nicht „Kapitel 11")
-- Formel, Verfahren in nummerierten Schritten und die Bedingung, wann es gilt
-- ein Miniaturbeispiel, die Fallen und die Seitenzahl im Lehrmittel
+- eine Übersicht: welches Werkzeug für welche Frage
+- pro Thema ein Kurzeinstieg in ein bis zwei Sätzen, Definition und Formeln, Tabellen,
+  Rezept in Schritten und ein Anwendungsbeispiel mit Probe
+- ein Code-Cheatsheet, wenn das Modul Python oder R verwendet, mit geprüften Ausgaben
+- die häufigen Fehler und die Seitenzahlen im Lehrmittel
 
 Läuft nur, wenn dein Vault einen Spickzettel-Ordner hat. Dann füllen `pva-vorbereitung` und
 `leseauftrag` ihn nach jeder Lerneinheit automatisch nach, und er liegt vor jedem Kurztest
